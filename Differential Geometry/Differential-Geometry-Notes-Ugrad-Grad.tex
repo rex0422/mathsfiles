@@ -1,0 +1,2277 @@
+\documentclass{amsart} %leqno
+\usepackage[left=1.3in,right=1.3in,bottom=1.6in]{geometry}
+%\usepackage{titlesec}
+%\usepackage{lipsum}
+\usepackage{mathrsfs}
+%\usepackage{libertine}
+%\usepackage[lite,subscriptcorrection,nofontinfo,amsbb,eucal]{mtpro2}
+
+%\usepackage{lmodern}
+
+\linespread{1}
+
+%\usepackage{sansmathfonts}
+%\usepackage{cmbright}
+%\usepackage[T1]{fontenc}
+%\renewcommand*\familydefault{\sfdefault}
+
+%slantedGreek
+
+\usepackage{hyphenat}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{accents}
+
+
+\usepackage{array, booktabs, caption}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{hhline}% http://ctan.org/pkg/hhline
+\usepackage{makecell} 
+\usepackage{enumitem}
+\usepackage{bbm}
+\usepackage{soul}
+
+%\usepackage{mtpro2}
+
+
+%\usepackage[nottoc]{tocbibind}
+\usepackage[bottom]{footmisc}
+%\usepackage{natbib}
+
+
+\usepackage[normalem]{ulem}
+\usepackage{relsize}
+\usepackage{commath}
+\usepackage{mathtools}
+\allowdisplaybreaks
+
+
+
+%\usepackage{fancyhdr}
+%
+%\pagestyle{fancy}
+%\fancyhf{}
+%%\renewcommand{\headrulewidth}{0.5pt}
+%%\rhead{\textsc{}}
+%%\cfoot{\textsc{Honors Analysis II}}
+%%\lhead{\textsc{Meng Hsuan (Rex) Hsieh}}
+%%\cfoot{}
+%\fancyhead[C]{\rightmark}
+%\fancyhead[RO,LE]{\thepage}
+
+\usepackage{float}
+
+\usepackage{color}
+\usepackage{commath}
+\usepackage{amsthm}
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{textcomp}
+
+\renewcommand\theadalign{lc}
+\renewcommand\theadfont{\bfseries}
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+	linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
+	citecolor=green,        % color of links to bibliography
+	filecolor=magenta,      % color of file links
+	urlcolor=cyan           % color of external links
+}
+
+\renewcommand{\epsilon}{\varepsilon}
+
+
+\newtheoremstyle{mytheoremstyle} % name
+{\topsep}                    % Space above
+{\topsep}                    % Space below
+{}                   % Body font
+{}                           % Indent amount
+{\bfseries}                   % Theorem head font
+{.}                          % Punctuation after theorem head
+{.5em}                       % Space after theorem head
+{}  % Theorem head spec (can be left empty, meaning ‘normal’)
+
+
+\theoremstyle{mytheoremstyle}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{corollary}[definition]{Corollary}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{obs}[definition]{Observation}
+\newtheorem{example}[definition]{Example}
+\newtheorem{assumption}[definition]{Assumption}
+\newtheorem{properties}[definition]{Properties}
+\newtheorem{motivation}[definition]{Motivation}
+\newtheorem{assertion}[definition]{Assertion}
+\newtheorem{derivation}[definition]{Derivation}
+\newtheorem{remark}[definition]{Remark}
+\newtheorem{fact}[definition]{Fact}
+\newtheorem{consequence}[definition]{Consequence}
+
+%\addto\captionsenglish{\renewcommand*{\proofname}{\scshape Proof.}}
+
+
+\numberwithin{equation}{section}
+
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\RR}{\widetilde{\mathbb{R}}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\NN}{\mathcal{N}}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\II}{II}
+\DeclareMathOperator{\LL}{\mathscr{L}}
+\DeclareMathOperator{\MM}{\mathscr{M}}
+\DeclareMathOperator{\bindist}{\mathsf{B}}
+\DeclareMathOperator{\betadist}{Beta}
+\DeclareMathOperator{\E}{\mathbf{E}}
+\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\var}{Var}
+\DeclareMathOperator{\1}{\mathbbm{1}}
+\DeclareMathOperator{\samplespace}{\mathcal{S}}
+\DeclareMathOperator{\suchthat}{\text{ s.t. }}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\DD}{D}
+%\DeclareMathOperator{\powerset}{\wp}
+\DeclareMathOperator{\powerset}{\mathcal{P}}
+\DeclareMathOperator{\normP}{norm}
+\DeclareMathOperator{\summod}{\accentset{\circ}{+}}
+\DeclareMathOperator{\contf}{\mathcal{C}}
+\DeclareMathOperator{\riemannint}{\mathscr{R}}
+\DeclareMathOperator{\OO}{\mathscr{O}}
+\DeclareMathOperator{\osc}{osc}
+\DeclareMathOperator{\linearop}{\mathcal{L}}
+\DeclareMathOperator{\borels}{\mathcal{B}}
+\DeclareMathOperator{\CP}{CP}
+\DeclareMathOperator{\sigmaalg}{\sigma-algebra}
+\DeclareMathOperator{\D}{\dif}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\x}{\mathbf{x}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\y}{\mathbf{y}}
+\DeclareMathOperator{\sphere}{\mathbf{S}}
+\DeclareMathOperator{\diam}{diam}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\Tau}{\mathcal{T}}
+
+%\newcommand{\vect}[1][2]{\LL(#1,#2)}
+\newcommand{\Lspace}[4]{\mathscr{L}^{#1}(#2,#3,#4)}
+\newcommand{\condset}[4]{\left\{ #1  : \: #2 #3 #4 \right\}}
+\newcommand{\innerproduct}[2]{\left\langle #1,#2 \right\rangle}
+
+\newcommand\restrict[1]{\raisebox{-.05ex}{$|$}_{#1}} 
+
+%\titleformat{\section}
+%{\centering\Large\normalfont\scshape}{\thesection .}{0.5em}{}
+%
+%\titleformat{\subsection}
+%{\centering\large\normalfont\scshape}{\thesubsection .}{0.5em}{}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+
+\begin{document}
+
+\title{Differential Geometry, Summer 2018}
+\author{Meng Hsuan Hsieh}
+\noindent \thanks{Based on the class taught by Robert Young. Please contact \url{menghsuan.hsieh@nyu.edu} for any typos, maths errors, and the like.}
+\date{\today}
+	
+\sloppy
+\maketitle
+
+\begin{abstract}
+	The first part concerns geometry in $\R^3$, of curves and surfaces. Then we move onto more abstract settings, where we discuss the notion of \textit{global} differential geometry.
+\end{abstract}
+
+{\hypersetup{linkcolor=black}
+\tableofcontents}
+
+
+\section{Introduction: Curves and Surfaces in $\R^3$}
+
+A significant part of this course is devoted to studying \textit{local} differential geometry: that is, the study of curves and surfaces. By local properties, we mean those that depend only on the behaviour of the curve or surface in the neighbourhood of a point. Recall, from analysis, the following fact: that a neighbourhood of points is easily studied by functions of several variables. There are easy ways of studying such functions, if we know the degree to which it is differentiable. This is the basis of \textit{local differentiable geometry}. Before we can get anywhere, we need to define a few objects.
+
+
+\subsection{Preliminaries}
+
+We present a few definitions and examples.
+
+\begin{definition}
+	\label{defdifferentiablemap}
+	A parametrised curve is a \textbf{differentiable map} $\alpha: I \mapsto \R^3$, where $I \subset \R$ is open.
+\end{definition}
+
+\begin{remark}
+	The notion of \textit{differentiable} in \defnref{defdifferentiablemap} is that $\alpha$ is a correspondence such that, for all $t \in I$, into a point $\alpha(t) \coloneqq (x(t),y(t),z(t)) \in \R^3$ where $x(t)$, $y(t)$, and $z(t)$ are differentiable. $t$ is a parameter, and we allow $I  \coloneqq (a,b) \subset \R$ to take $a=-\infty$ and/or $b=+\infty$.
+\end{remark}
+
+\begin{definition}
+	\label{deftangentvector}
+	The \textbf{tangent vector at point $t$} is the vector $\alpha'(t) \coloneqq (x'(t),y'(t),z'(t)) \in \R^3$, where $x'(t)$ denotes the first derivative.
+\end{definition}
+
+\begin{definition}
+	\label{deftrace}
+	The image of $I$ under $\alpha$, ie. $\alpha(I)$, is called the \textbf{trace} of $\alpha$.
+\end{definition}
+
+\begin{remark}
+	A parameterised curve is a map, while trace is a set---specifically, a subset of $\R^3$.
+\end{remark}
+
+Now, we review a few things about norms and inner product spaces.
+
+\begin{definition}
+	The ordered pair $V \coloneqq (V, \norm{\cdot})$ is called a \textbf{normed linear/vector space}.
+\end{definition}
+
+\begin{fact}
+	It is not difficult to show that if $(V, \norm{\cdot})$ is a normed linear space, then $d(x,y) = \norm{x-y}$ defines a metric on $V$.
+\end{fact}
+
+\begin{definition}
+	Let $W$ be a vector space. An \textbf{inner product} of $W$ is a function
+	\begin{align*}
+	\innerproduct{\cdot}{\cdot} : V \times V \to [0,\infty)
+	\end{align*}
+	such that
+	\begin{enumerate}
+		\item Linearity holds,
+		\item Symmetric holds,
+		\item $\innerproduct{x}{x} \geq 0$ for all $x \in W$ (positivity holds),
+		\item $\innerproduct{x}{x} = 0 \implies x =0$.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Cauchy-Schwarz Inequality for Inner Product Spaces]
+	\label{thmcauchyschwarzinnerproduct}
+	Let $V$ be an inner product space. Define $\norm{x} \coloneqq \sqrt{\innerproduct{x}{x}}$ for all $x \in V$. Then,
+	\begin{align*}
+	\abs{\innerproduct{x}{y}} \leq \norm{x} \norm{y}, \qquad \forall x,y \in V
+	\end{align*}
+\end{theorem}
+
+
+\begin{proof}
+	This is fairly straightforward: if $y=0$, then the conclusion is obvious. Suppose $y \neq 0$; then, $\innerproduct{y}{y} >0$. Let $c \in \R$; then,
+	\begin{align}
+	0 \leq \innerproduct{x-cy}{x-cy} = \innerproduct{x}{x} - 2c \innerproduct{x}{y} + c^2 \innerproduct{y}{y}
+	\end{align}
+	if we let $c = \frac{\innerproduct{x}{y}}{\innerproduct{y}{y}}$, we then have
+	\begin{align*}
+	0 &\leq \innerproduct{x}{x} \innerproduct{y}{y} - \innerproduct{x}{y}^2
+	\end{align*}
+	and rearranging gives the desired result.
+\end{proof}
+
+
+With those, we are able to build towards a theory for local properties of parameterised differentiable curve. 
+
+
+\subsection{Parameterisation by Arclength}
+
+For the study of differential geometry, the notion of having tangent line at every point $s \in I$ is extremely important. In other words, it is imperative to find out at what points the tangent line is undefined, ie. the set $S$ such that for all $s \in S$, $\alpha'(s) = 0$. Hence, it makes sense to define the following in order to make our lives easier.
+
+
+\begin{definition}
+	\label{defregularcurve}
+	A paramterised differentiable curve $\alpha: I \to \R^3$ (under the usual definition for $I \subset \R$ is open) is \textbf{regular} if $\alpha'(t) \neq 0$ for all $t \in I$.
+\end{definition}
+
+
+\begin{definition}
+	\label{defarclength}
+	For all $t_0 \in I$, the \textbf{arclength} of a regular parameterised (differentiable)\footnote{This is really not needed anymore, since regularity implies the map $\alpha$ is differentiable everywhere in $I$ (for all $\epsilon$-neighbourhood of every $s \in I$, to be exact).} curve $\alpha$ is defined as
+	\begin{align*}
+	s(t) \coloneqq \int_{t_0}^{t} \abs{\alpha'(s)} \D s = \int_{t_0}^{t} \sqrt{[x'(s)]^2 + [y'(s)]^2 + [z'(s)]^2 }  \D s 
+	\end{align*}
+	Since $\alpha'(t) \neq 0$ for all $t \in I$, we have, by fundamental theorem of calculus,
+	\begin{align*}
+	\frac{\D  s}{\D t} = \abs{\alpha'(t)}
+	\end{align*}
+\end{definition}
+
+It is worthy to note that $s(t)$ is already the arclength measured from some point. To be clear, given $\frac{\D  s}{\D t} = \abs{\alpha'(t)} = 1$, the conclusion $\abs{\alpha'(t)} = 1$ follows obviously; and, equivalently, if $\abs{\alpha'(t)} = 1$, then for all $t \in I$, $s(t) = \int_{t_0}^{t} 1 \dif s = t - t_0$. As such, the arclength of $\alpha$ is measured from some point, which is completely arbitrary, as we have shown here.
+
+Also of note is the following fact: that curves parameterised by arclength are useful, but not necessary. We will explore why this is later in this section. To make exposition clearer: the origin of the arclength $\alpha(t)$ does not matter---and we only care about the derivatives of $\alpha(t)$.
+
+Finally, the \textit{change of orientation} is sometimes useful, because, by convention, we prefer positive orientation for most of the theorems we will introduce later. It is easy to define a change of orientation if we are given some map $\alpha(s)$, since we can just define $\beta(s) = \alpha(-s)$.
+
+
+\subsection{Vector Spaces and Vector Products}
+
+The notion of vector space is fairly intuitive: it is a collection of elements endowed with some linear operation. Since we are in $\R^3$, it makes sense to define the vector product.
+
+\begin{definition}
+	\label{deforientationvectorspace}
+	Let $e \coloneqq \set{e_i}_{i=1}^{n}$ and $f \coloneqq \set{f_i}_{i=1}^{n}$ be the basis in a finite dimension vector space $V$. Then, if the change of basis matrix has a positive determinant, we say the \textbf{ordered bases $e$ and $f$ has the same orientation}.
+\end{definition}
+
+Obviously, the relation $e \sim f$ iff these ordered bases have the same orientation is an equivalence relation. One can easily check RST on this relation. There are only two equivalence classes: one that preserves, and another that changes, orientation (corresponding to change of basis matrices with positive and negative determinants, respectively).
+
+\begin{definition}
+	\label{defvectorproduct}
+	Let $u,v \in \R^3$. The \textbf{vector product of $u$ and $v$} (in that order), denoted $u \wedge v$, is defined by the convention
+	\begin{align}
+	\label{eqdefvectorproductfund}
+	(u \wedge v) \cdot w = \det(u,v,w)
+	\end{align}
+	Obviously, since this is a finite dimensional vector space, we have a natural choice of basis, and we can write $u = \sum_i u_i e_i$, $v = \sum_i v_i e_i$, and $w = \sum_i w_i e_i$ uniquely (this is a basic proposition from linear algebra). Let $\abs{a_{ij}} \coloneqq \det (a_{ij}) $ for notational simplicity. By definition above, then, $u \wedge v$ is the result of cofactor expansion along the first row.
+\end{definition}
+
+\begin{properties}[Properties of Vector Product]
+	\label{propertiesofvectorproduct}
+	\begin{enumerate}
+		\item $u \wedge v = -v \wedge u$.
+		\item $\wedge $ is a linear operator.
+		\item $u \wedge v = 0 \iff u, v$ are linearly independent.
+		\item $(u \wedge v) \cdot u = (u \wedge v) \cdot v = 0$.
+	\end{enumerate}
+\end{properties}
+
+
+\begin{remark}
+	(4) from Properties \ref{propertiesofvectorproduct} implies that $(u \wedge v)$ is perpendicular to $u$ and $v$. Why?
+	
+	Looking at $(u \wedge v) \cdot (u \wedge v) = \abs{u \wedge v} \geq 0$, so $\abs{u},\abs{v},\abs{u \wedge v} >0$ (the determinants). As such, the set $\set{u,v,u \wedge v} $ is a positive basis. For arbitrary vectors, we prove the following:
+	\begin{align}
+	\label{eqpropertyofscalarproductofvectorproducts}
+		(u \wedge v) \cdot (x \wedge y) = \det \begin{bmatrix*}[c]
+			u \cdot x & v \cdot x \\ u \cdot y & v \cdot y \\
+		\end{bmatrix*} \coloneqq \abs{\begin{bmatrix*}[c]
+			u \cdot x & v \cdot x \\ u \cdot y & v \cdot y \\
+			\end{bmatrix*}}
+	\end{align}
+	The proof is quite easy: since dot and vector products are linear, the problem reduces to proving true for four arbitrary $e_i$ (the canonical bases). As such, we have
+	\begin{align*}
+		\abs{u \wedge v}^2 = \abs{u}^2 \abs{v}^2 (1- \cos^2 \theta) = A^2
+	\end{align*}
+	where $\theta$ is the angle between $u$ and $v$, and $A$ is the area of the parallelogram spanned by $u$ and $v$.
+\end{remark}
+
+
+\begin{proposition}
+	\label{propvectorproductformula}
+	Let $u,v,w \in \R^3$. Then, vector product is associative, and
+	\begin{align}
+		\label{eqvectorproductassociative}
+		(u \wedge v) \wedge w = (u \cdot w ) v - (v \cdot w ) u
+	\end{align}
+\end{proposition}
+
+\begin{proof}
+	Verify this statement is true for the canonical basis, and, by linearity of the operator, this extends to every vector in $\R^3$.
+\end{proof}
+
+
+\begin{proposition}
+	\label{propvectorproductlinearityderivative}
+	Let $u(t) \coloneqq (u_1 (t),u_2(t),u_3(t))$ and $v(t) \coloneqq (v_1 (t),v_2(t),v_3(t))$, which maps $\R \to \R^3$. Then,
+	\begin{align}
+		\label{eqvectorproductderivative}
+		\dod{(u(t) \wedge v(t))}{t} = \dod{u}{t} \wedge v(t) + u(t) \wedge \dod{v}{t}
+	\end{align}
+\end{proposition}
+
+\begin{proof}
+	This is quite straightforward. We omit the proof here.
+\end{proof}
+
+
+\subsection{Local Theory of Curves Parameterised by Arclength}
+
+We are now ready to discuss the local theory of curves parameterised by arclength; towards the end, we will find out why parametrisation by arclength is not essential to this theory. For now, we start with the elementary facts.
+
+\begin{example}
+	Suppose we are approximating the arclength of some curve $C$ by discrete approximation---that is, by chord length. The length $\Delta s \approx \abs{\Delta r} = \abs{r(t+\Delta t) - r(t)}$, which, by first order Taylor expansion, gives us
+	\begin{align*}
+		\Delta s \approx \abs{\dod{r}{t} \Delta t + \frac{1}{2} \dod[2]{r}{t} (\Delta t)^2 } \approx \abs{\dod{r}{t}} \Delta t
+	\end{align*}
+	and when $\Delta t \to 0$, this becomes the differential arclength $s$ of $C$:
+	\begin{align*}
+		\D s = \abs{\dod{r}{t}} \D t = \sqrt{r'(t) \cdot r'(t)} \D t 
+	\end{align*}
+	By an earlier argument, $\dod{s}{t} = r'(t)$. Hence, the \textbf{unit tangent vector} $t$ is given by
+	\begin{align*}
+		t \coloneqq \frac{r'}{\abs{r'}} = \frac{\dod{r}{t}}{\dod{s}{t}} = \dod{r}{s}
+	\end{align*}
+	which is the derivative of the curve with respect to the arclength!
+\end{example}
+
+\begin{definition}
+	\label{defunittangentvector}
+	The \textbf{unit tangent vector} is defined as derivative of the curve with respect to the arclength, ie. let $\alpha: I \to \R^3$ denote a regular, parameterised curve; then, $t(s) \coloneqq \alpha'(s)$, where $s$ is the arclength and $\abs{t(s)} = 1$, is the unit tangent vector.
+	
+	The vector orthogonal to unit tangent vector is called the \textbf{(unit) normal vector}\footnote{For all intents and purposes, we discuss a normalised normal vector, ie. a unit normal vector.}.
+\end{definition}
+
+\begin{definition}
+	\label{defcurvature}
+	Under the same definition of $\alpha$, $k(s) \coloneqq \abs{a''(s)}$ is the \textbf{curvature of $\alpha$ at $s$}.
+\end{definition}
+
+There is now a series of important objects we must define in order to do geometry in $\R^3$.
+
+\begin{definition}
+	\label{defosculatingplane}
+	The \textbf{osculating plane} is the plane defined by the unit tangent and unit normal vectors, $t$ and $n$.
+\end{definition}
+
+\begin{definition}
+	\label{defbinormalvector}
+	The \textbf{binormal vector} is the vector product of $t$ and $n$, ie. $b = t \wedge n$.
+\end{definition}
+
+\begin{definition}
+	Again, let $t(s) \coloneqq a'(s)$, where $s$ is the arclength of the curve $C$. Then,
+	\begin{align}
+		\label{eqfrenett'}
+		t' = kn
+	\end{align}
+	comes from a basic differentiation
+	\begin{align*}
+		t' = \alpha''(s) \dod{s}{t} = kn
+	\end{align*}
+\end{definition}
+
+
+Now, it makes sense to discuss the change in osculating plane in some neighbourhood of $p \in S$, since, fundamentally, $b$ and $n$ are important measures of geometries in $\R^3$.
+
+\begin{definition}
+	\label{deftorsion}
+	Let $b(s)$ denote the binormal vector, and $n(s)$ be the unit normal vector. Then, the \textbf{torsion of map $\alpha$ at $s$}, denoted $\tau(s) \in \R$ such that
+	\begin{align}
+		\label{eqfrenetb'}
+		b'(s) = \tau(s) n(s)
+	\end{align}
+\end{definition}
+
+\begin{definition}
+	\label{deffrenetn'}
+	Recall $n = b \wedge t$. Then,
+	\begin{align}
+		\nonumber n' &= b' \wedge t + b \cap t' \\
+		\nonumber &= (\tau n \wedge \alpha) + ( (n \wedge t) \wedge k ) \\
+		\label{eqfrenetn'} &= - kt - \tau b
+	\end{align}
+\end{definition}
+
+
+\begin{definition}
+	\label{deffrenetformula}
+	The collection \eqref{eqfrenett'}, \eqref{eqfrenetb'}, and \eqref{eqfrenetn'} is called \textbf{Frenet's formulae}.
+\end{definition}
+
+
+Here are the fundamental objects in calculus on geometries.
+
+\begin{definition}
+	\label{defrectifyingplane}
+	The $tb$ plane, defined by coordinates tangent and binormal vectors, is called the \textbf{rectifying plane}.
+\end{definition}
+
+\begin{definition}
+	\label{defnormalplane}
+	The $nb$ plane, defined by coordinates tangent and normal vectors, is called the \textbf{normal plane}.
+\end{definition}
+
+\begin{definition}
+	\label{defprincipalnormalandbinormalplanes}
+	The line passing through $\alpha(s)$ containing
+	\begin{enumerate}
+		\item $n(s)$ is called \textbf{principal normal}.
+		\item $b(s)$ is called \textbf{binormal}.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	\label{defradiusofcurvature}
+	Let $k$ be the curvature of map $\alpha$. Then, $R \coloneqq \frac{1}{k}$ is the \textbf{radius of curvature}.
+\end{definition}
+
+\begin{remark}
+	The circle of radius $r$ has $R = r$.
+\end{remark}
+
+With these definitions, we can properly define one of the most useful results in the local theory of curves and surfaces.
+
+
+\begin{theorem}[Fundamental Theorem of Local Theory of Curves]
+	\label{thmFTLTC}
+	Given differentiable functions $k(s) >0$, $\tau(s)$ for all $s \in I$, there exists $\alpha: I \to \R^3$ such that $s =$ arclength, $k(s) = $ curvature, $\tau(s)= $ torsion of $\alpha$ at $s$. Moreover, any other curve $\overline{\alpha}$ that satisfies these conditions are different up to rigid motion: that is, there exists an orthogonal map $\rho: \R^3 \mapsto \R^3$ and translation vector $a \in \R^3$ such that $\overline{\alpha} = \rho \circ \alpha + a$. 
+\end{theorem}
+
+%Rex is my favorite person alive and deserves the whole world also the N key is missing look at the keyboard. 
+
+We defer the proof to much later, in section 4.
+
+
+\subsection{Isoperimetric Inequality}
+Even though this topic deserves much more work and discussion than we will give here, there is a fundamental to answer: Given a line of length $\ell$, what is the maximum area that it can enclose? The answer is, of course, a circle. 
+
+
+
+\clearpage
+\section{Regular Surfaces}
+The notion of regularity is an important one in differential geometry. We want to be able to define an osculating plane everywhere, for all $s \in I$. The necessary condition is that the tangent vector exists everywhere, for all $s \in I$. So, at the very minimum, the map must be smooth to a certain degree to allow $t(s) $ to exist everywhere.
+
+That brings us to the bare minimum we should do: to define \textit{regular surfaces} which, for all intents and purposes, are smooth enough to do regular calculus on. The idea is sort of clear in a low-dimension setting: we take, deform, match, and glue surfaces in $\R^3$ in such a way that we eliminate all pointy, sharp edges, vertices, and so on. So, we construct sets in $\R^2$ that are smooth enough, on whose image under map $\alpha$ we can define calculus.
+
+Before the definition of regular surfaces, we make one quick remark:
+
+\begin{remark}
+	\label{remcoordinatesystemparametrisation}
+	Because geometries are completely dependent on parametrisation, it makes sense to speak of \textit{a} coordinate system for different geometries in a plane. So, a regular plane should be dependent on properties of the maps, rather than the actual parametrisations.
+\end{remark}
+
+
+\begin{definition}
+	\label{defregularsurfaces}
+	A \textbf{regular surface} $S \subset \R^3$ is a \textbf{regular surface} if, for all $p \in S$, there exists a neighbourhood $V_p \subset \R^3$ and a map $\x:U \mapsto (V_p \cap S)$, where $U \subset \R^2$ is open, $(V_p \cap S) \subset \R^3$ such that
+	\begin{enumerate}
+		\item \label{properties1} $\x$ is a differentiable map (all component functions are differentiable).
+		\item \label{properties2} $\x$ is a homeomorphism: $\x$ is continuous with a continuous inverse.
+		\item \label{properties3} $\x$ satisfies a \textit{regularity condition}: $\forall q \in U$, $\D \x_q: \R^2 \mapsto \R^3$ is injective.
+	\end{enumerate}
+\end{definition}
+
+Why do we need \eqref{properties3} from \defnref{defregularsurfaces}? It is best seen through an example. Let the bases for $\R^2$ and $\R^3$ be $\set{e_1,e_2}$ and $\set{f_1,f_2,f_3}$. Let $q = (u_0,v_0) \in \R^2$. Since $_1$ is tangent to the map $u \to (u,v_0)$, ie. $\im(\x (u))= (x(u,v_0),y(u,v_0),z(u,v_0))$. So, $e_1$ is tangent vector to $\im (\x (u))$, ie. $\x(q)$ is the tangent vector. As such,
+\begin{align*}
+	\D \x_q (e_1) \left( \dpd{x}{u} , \dpd{y}{u} , \dpd{z}{u} \right) &= \dpd{\x}{u}  \\
+	\D \x_q (e_2) \left( \dpd{x}{v} , \dpd{y}{v} , \dpd{z}{v} \right) &= \dpd{\x}{v}
+\end{align*}
+ie. the canonical basis under the differential of map $\x$ is the linear transformation
+\begin{align*}
+d \x_q = \begin{bmatrix*}[c]
+\vert & \vert \\
+\dpd{\x}{u} & \dpd{\x}{v} \\
+\vert & \vert 
+\end{bmatrix*}
+\end{align*}
+Note that, from linear algebra, such map is injective if and only if $\ker (\D \x_q)$ is trivial, ie. $\ker (\D \x_q) = \set{e}$, where $e$ is the identity in $\R^2$. This means if the map sends itself to itself, it has to be the identity map. Hence, as a map, $\alpha: I \mapsto \R^3$ suffices, but we need to define a surface $S \subset \R^3$, which this definition allows us to do. This property also guarantees the ``tangent plane'' at all $s \in S$ (some of these do not look like tangent planes, but, per definition and construction, these are all examples of tangent planes).
+
+Also, note that
+\begin{itemize}
+	\item \defnref{defregularsurfaces}, \eqref{properties1} is a natural requirement for the subject, as we care about derivatives and (at least) global properties of maps.
+	\item \defnref{defregularsurfaces}, \eqref{properties2} is a subtle point: it is required to prove different propositions are true independent of paramterisation (which is something we've already set out to do earlier in this section).
+\end{itemize}
+
+
+\begin{example}
+	The unit sphere is a regular surface! Define 
+	\begin{align*}
+	\sphere = \condset{(x,y,z) \in \R^3}{x^2 + y^2 + z^2}{=}{1}
+	\end{align*}
+	We first define the map
+	\begin{align*}
+		\x : (x,y) \to (x,y,+\sqrt{1-x^2-y^2})
+	\end{align*}
+	where $\R^2 = \condset{(x,y,z)}{z=0}{,}{ \: x,y \in \R}$ and $U = \condset{(x,y) \in \R^2}{x^2 + y^2}{<}{1}$. Since $x^2 + y^2 < 1$, the map is differentiable for all orders. This satisfies \defnref{defregularsurfaces}, \eqref{properties1}.
+	
+	Since
+	\begin{align*}
+		\dpd{(x,y)}{(x,y)} \equiv 1 
+	\end{align*}
+	the map has trivial kernel. Hence, \defnref{defregularsurfaces}, \eqref{properties3} is satisfied.
+	
+	By a familiar argument, note that $\x^{-1}$ is the restriction of the continuous map $\pi(x,y,z) = (x,y)$ to $\x(U) $ (the image of $U$ under $\x$), then $\x^{-1}$ is continuous as the restriction of the continuous map. \defnref{defregularsurfaces}, \eqref{properties2} is satisfied.
+	
+	Similarly, define
+	\begin{align*}
+	\x_1 (x,y) &= (x,y,-\sqrt{1-x^2-y^2}) \\
+	\x_2 (y,z) &= (+\sqrt{1-y^2-z^2},y,z) \\
+	\x_3 (y,z) &= (-\sqrt{1-y^2-z^2},y,z) \\
+	\x_4 (x,z) &= (x,+\sqrt{1-x^2-z^2},z) \\
+	\x_5 (x,z) &= (x,-\sqrt{1-x^2-z^2},z)
+	\end{align*}
+	which, along with the original $\x$, completely defines the sphere in $\R^3$.
+\end{example}
+
+Recall that in \remref{remcoordinatesystemparametrisation}, we've said that coordinate systems are completely arbitrary. For most intents and purposes, we can also define the \textit{spherical coordinates}: let
+\begin{align*}
+V \coloneqq \condset{(\theta,\phi)}{0 < \theta < \pi}{,}{\: 0 < \phi < 2\pi}
+\end{align*}
+and the map
+\begin{align*}
+\x (\theta,\phi) = (\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+\end{align*}
+whose image under $V$ parameterises $\sphere^2$ (ie. $\x (V) \subset \sphere^2 \subset \R^3$). So $\x$ parameterises $\sphere^2$.
+
+It is clear that \defnref{defregularsurfaces}, \eqref{properties1} is satisfied: that every component has continuous partial derivatives of all order.
+
+Also, note that 
+\begin{align*}
+\dpd{(x,y)}{(\theta,\phi)} &= \sin \theta \cos \theta \\
+\dpd{(y,z)}{(\theta,\phi)} &= \sin^2 \cos \phi \\
+\dpd{(x,z)}{(\theta,\phi)} &= -\sin^2 \sin \phi
+\end{align*}
+to vanish simultaneously, it must be the case that the sum of squares is zero. In other words,
+\begin{align*}
+(\sin \theta \cos \theta)^2 + (\sin^2 \cos \phi)^2 + ( -\sin^2 \sin \phi)^2 &= \sin^4 \theta  + \cos^2 \theta \sin^2 \theta \\
+&= \sin^2 \theta = 0 \iff \theta \in 2\pi \Z \not\subset V
+\end{align*}
+Clearly, \defnref{defregularsurfaces}, \eqref{properties3} is satisfied.
+
+As always, we see that for all $(x,y,z) \in \sphere^2 \setminus C$, where $C$ is the semicircle 
+\begin{align*}
+C = \condset{(x,y,z) \in \sphere^2}{y=0 }{,}{\: x \geq 0}
+\end{align*}
+it is clear that $\theta = \arccos z$ uniquely! In other words, $x,y $ are uniquely determined since $\sin \theta$ would be determined uniquely as well. As such, $\x$ is continuous, and $\x^{-1}$ exists. Is the inverse continuous? Yes, but we wouldn't need to check, as we will touch on in a little bit. For now, we conclude that \defnref{defregularsurfaces}, \eqref{properties2} is satisfied, so the coordinate system induces a regular surface in $\R^3$.
+
+It is extremely tiresome to have to check the regularity of surface $S$; we develop a few ideas to make easier the classification of regular surfaces.
+
+
+\begin{theorem}
+	\label{thmgraphofdifferentiablefunctionsetisregular}
+	Let $f : U \mapsto \R$ be a differentiable map, where $U \subset \R^2$ is open. Then, the graph of $f$, ie. the collection of coordinates $(x,y,f(x,y))$, is a regular surface of $\R^3$.
+\end{theorem}
+
+\begin{proof}
+	Clearly, it is sufficient to prove that the graph $\x(u,v) = (u,v,f(u,v))$ covers all neighbourhoods of points in $\im(U)$. Equally obviously, \defnref{defregularsurfaces}, \eqref{properties1} and \defnref{defregularsurfaces}, \eqref{properties3} hold, since $\od{(x,y)}{(u,v)} \equiv 1$. Now, for any $(x,y,z) \in \R^3$, we know there exists a unique $(x',y') \in R^2$ such that $f(x',y') = (x,y,z)$. Hence, $\x$ is injective. Furthermore, the map $\x^{-1}$ is the restriction of the continuous (projection) map from $\R^3 $ to the $xy$ plane. Altogether, $\x $ is a homeomorphism. \defnref{defregularsurfaces}, \eqref{properties2} is satisfied.
+\end{proof}
+
+
+However powerful, \thmref{thmgraphofdifferentiablefunctionsetisregular} is not very useful, because it tells us nothing about what function parameterises $S$, nor does it tell us in what neighbourhoods of $S$ does the function act in. We need a couple of preliminary definitions here.
+
+\begin{definition}
+	\label{defcriticalpointsvaluesregularvalues}
+	Let $F: U \mapsto \R^m$, where $U \subset \R^n$ is open, be a differentiable map.
+	
+	\begin{enumerate}
+		\item $p \in U$ is a \textbf{critical point} if $F_p : \R^n \mapsto \R^m$ is \textit{not} a surjective map.
+		
+		\item $F(p)$ ($p$ as defined in the previous definition) is called the \textbf{critical value}.
+		
+		
+		\item $q \in \R^m$ that is not a critical value is called a \textbf{regular value.}
+	\end{enumerate}
+\end{definition}
+
+
+These definitions obviously come from studying $f: U \subset \R \mapsto \R$ functions. Recall that for each point $x_0 \in \R$, $f'(x_0)=0$ implies that $x_0$ is a critical point. As such, $\D f_{x_0} : a \in R \to 0$. So, for all $a \notin f(U)$, $a$ is the the \textit{regular value}. Now, note the following calculations: if $g: U \subset \R^3 \mapsto \R$ is differentiable, then $\D g_p$ can be applied to the canonical basis $\set{e_1,e_2,e_3}$ such that $\D g_p: x \to e_1$ is the same as the tangent vector at $g(p)$: ie. $x \mapsto g(x,y_0,z_0)$ gor some $y_0,z_0$ gixed. This implies 
+\begin{align*}
+\D g_{p} (1,0,0) = \dpd{g}{x} (x,y_0,z_0) = g_x
+\end{align*}
+\textit{mutatis mutandis}, we can derive the diggerential map evaluated in other bases. Then, we obtain $\D g_p = (g_x,g_y,g_z)$. The only critical point is theregore $(0,0,0)$. Does this git our deginition? \textit{Yes}; note that $\D g_p$ is not surjective (by deginition og critical point) means that $g_x=g_y=g_z = 0$ at $p \in U$. Hence, we have the gollowing gact.
+
+\begin{fact}
+	\label{factregularvaluecharacterisation}
+	Let $g: U \subset \R^3 \mapsto \R$ be a differentiable map. $a \in g(U)$ is a regular value of $g \iff g_x,g_y,g_z$ do not vanish simultaneously at any point of the preimage
+	\begin{align}
+	\label{eqfactregularvaluecharacterisation}
+	g^{-1} (a) = \condset{(x,y,z) \in U}{g(x,y,z)}{=}{a}
+	\end{align} 
+\end{fact}
+
+\noindent Now we have the following theorem.
+
+\begin{theorem}
+	\label{thmcontinuousfunctionpreimageasregularsurface}
+	Let $f: U \mapsto \R$, where $U \subset \R^3$, be a differentiable function with $a \in f(U)$ as a regular value of $f$. Then, $f^{-1} (a)$ is a regular surface in $\R^3$.
+\end{theorem}
+
+\begin{proof}
+	This uses \thmref{thminversefunction}, detailed and proved in \appref{apppreliminaries}. First, by definition, if $a \in f(U)$ is a regular value, then the map $f$ is surjective: in particular, this means it is possible to assume, without loss, $f_z \neq 0$, at $p \coloneqq (x_0,y_0,z_0) \in f^{-1} (a)$ (also guaranteed by Fact \ref{factregularvaluecharacterisation}). Define the map
+	\begin{align*}
+	F(x,y,z) = (x,y,f(x,y,z))
+	\end{align*}
+	and we use $(u,v,t)$ to denote the coordinates in $\R^3$ where $F$ takes its inputs. Then, notice the differential of $F$ at $p$ is represented by the matrix
+	\begin{align*}
+		T \coloneqq \begin{bmatrix*}[c]
+			1 & & \\ & 1 & \\ f_x & f_y & f_z
+		\end{bmatrix*}
+	\end{align*}
+	and $\det T = f_z \neq 0$ by assumption. Hence the map is invertible, and by \thmref{thminversefunction}, there exists open neighbourhoods $V$ of $p$ and $W$ of $F(p)$ such that $F: V \mapsto W$ is invertible, and $F^{-1} : W \mapsto V$ is differentiable. So the coordinate functions of $F^{-1}$ are differentiable! In other words, letting $x=u$, $y=v$, and $z=g(u,v,t)$ for all $u,v,t \in W$ is possible, and $g(u,v,a) = h(x,y) $, where $a$ is the regular value stated in the theorem, and $h(x,y) $ is a function in $\R^2$. Furthermore, this gives us a differentiable function defined on the projection of $V$ onto the $xy$ plane. So the image $F(f^{-1}(a) \cap V ) = W \cap \condset{(u,v,t)}{t}{=}{a}$. By \thmref{thmgraphofdifferentiablefunctionsetisregular}, $f^{-1}(a) \cap V$ is a coordinate neighbourhood of $p$, implying the graph of $h(x,y)$ is $f^{-1}(a) \cap V$. As such, we note that for any $p \in f^{-1}(a)$, $P$ can be covered by a coordinate neighbourhood. So $f^{-1}(a)$ is necessarily a regular surface.
+\end{proof}
+
+Because regular surfaces are important for many parts of the analysis of geometries, we present two detailed examples---both taken from Calculus III.
+
+
+\begin{example}
+	\label{exampleellipsoid}
+	Let
+	\begin{align}
+	\label{eqellipsoid}
+	\frac{x^2}{a^2} + 	\frac{y^2}{b^2} + 	\frac{z^2}{c^2} = 1
+	\end{align}
+	denote an ellipsoid. We \uline{claim} this is a regular surface! It suffices to prove that if $a \in f(U)$ is a regular value, then its preimage is a regular surface in $\R^3$. It is mostly easier to classify \textit{critical values} than to do the same with regular values. Set
+	\begin{align*}
+	f(x,y,z) = \frac{x^2}{a^2} + 	\frac{y^2}{v^2} + 	\frac{z^2}{c^2} - 1
+	\end{align*}
+	and note that in order for $f_x = f_y = f_z = 0$, then $x=y=z=0$ is necessary. This gives us $(0,0,0)$ as a critical value. However, also note that ellipsoid is exactly the preimage $f^{-1}(0)$, and $(0,0,0 ) \notin f^{-1}(0)$. Hence, $0$ is a regular value of $f$, and by \thmref{thmcontinuousfunctionpreimageasregularsurface}, the ellipsoid is a regular surface.
+\end{example}
+
+\noindent Below is an important remark.
+
+\begin{remark}
+	In the definition of regular surfaces, we have made no restrictions on the \textit{connectedness} of the geometry. It is an elementary fact from point-set topology, that path-connectedness implies connectedness (but not the other way round!). So, any surface $S \subset \R^3$ is connected if any two of its points can be joined by a continuous curve in $S$.
+\end{remark}
+
+\begin{example}
+	\label{examplehyperboloidoftwosheets}
+	Let
+	\begin{align}
+	\label{eqhyperboloidoftwosheets}
+	-x^2-y^2+z^2 = 1
+	\end{align}
+	denote a hyperboloid of two sheets. Again, with mostly the same verification as in \exref{exampleellipsoid}, $f^{-1}(0)$ is exactly the hyperboloid of two sheets, where $0$ is the regular value of $f(x,y,z) = -x^2-y^2+z^2 -1$. This surface is not connected! If one picks two points, each in distinct sheets ($z>0 $ and $z<0$), it is not possible to join  them together by a continuous curve. Otherwise, $z$ changes some, and for some $t_0$, $z(t_0) =0$, implying that such curve cannot be contained in $S$.
+\end{example}
+
+
+\begin{proposition}
+	\label{propnonzerocontinuousfunctiononconnectednotchangesign}
+	Let $f: S \mapsto \R$ be a nonzero continuous function defined on connected surface $S \subset \R^3$. Then, $f$ does not change sign on $S$.
+\end{proposition}
+
+\begin{proof}
+	Assume, by way of contradiction, that $f(p) > 0$ and $f(q) < 0$ for some $p,q \in S$. Since $S$ is connected, there exists some continuous function $\alpha:[a,b] \mapsto S$ such that $\alpha(a) = p$ and $\alpha(b) = q$. By intermediate value theorem, $\alpha([a,b]) = [\alpha(a),\alpha(b)] = [p,q]$; moreover, this implies that if we apply IVT to $f \circ \alpha: [a,b] \to \R$, we see that for some $c \in (a,b)$, $f \circ \alpha (c) = 0$. This contradicts the assumption.
+\end{proof}
+
+\begin{example}
+	\label{exampletorus}
+	Let us parameterise the torus $T$: rotate $\sphere^1$ of radius $r$ about straight line belonging to the circle, at a distance $a > r$ away. For a particular construction of the torus, pick $\sphere^1 \subset yz$ plane centred at $(0,a,0)$. Let $\sphere^1$ be parameterised by $(y-a)^2 + z^2 = r^2$. Points of $T$ were obtained by rotating $z^2 = r^2 - (\sqrt{x^2 + y^2} - a)^2$, so we can define
+	\begin{align*}
+	f(x,y,z) = z^2 + (\sqrt{x^2 + y^2} - a)^2
+	\end{align*}
+	which is differentiable for all $x^2 + y^2 \neq 0 \iff (x,y) \neq (0,0)$ for any $x,y$. Since $f_z = 2z$, $f_x = \frac{2x (\sqrt{x^2+y^2} - a )}{\sqrt{x^2 + y^2}}$, and $f_y = \frac{2y (\sqrt{x^2+y^2} - a )}{\sqrt{x^2 + y^2}}$, hence the regular value is $r^2$ (which is not the critical point of $T$). By \thmref{thmcontinuousfunctionpreimageasregularsurface}, $T$ is a regular surface.
+\end{example}
+
+Recall that earlier, we've established the fact that the graph of a differentiable function is a regular surface. Locally, the converse is true.
+
+\begin{theorem}
+	\label{thmlocalisomorphismbetweengeometryanddifferentiablefunction}
+	Locally, every regular surface in $\R^3$ is isomorphic to a differentiable function. In other words, let $S \subset \R^3$ be a regular surface, and $p \in S$. Then, there exists a neighbourhood $V$ of $p$ such that $V= $ graph of differentiable function of the form: $z=f(x,y)$, $y = g(x,z)$, and $z = h(x,y)$.
+\end{theorem}
+
+\begin{proof}
+	Let $\x: U \mapsto S$ be a parametrisation of $S$ in $p$, where $U \subset \R^2$ is open. By regularity, one of the Jacobian minors is nonzero at $\x^{-1} (p) = q$, ie. one of $\pd{(x,y)}{(u,v)},\pd{(y,z)}{(u,v)},\pd{(x,z)}{(u,v)}$ is nonzero. We prove the statement for one of the directions. Suppose $\pd{(x,y)}{(u,v)} \neq 0$. Let $\pi: \R^3 \to \R^2$ be a projection onto $xy$ plane. Consider the composition map $\pi \circ \x : U \mapsto \R^2$. Then, $\pi \circ \x(u,v) = (x(u,v), y(u,v))$, which is obviously invertible by the assumption that $\pd{(x,y)}{(u,v)} \neq 0$, hence inverse function thereom applies. Then, there exists neighbourhoods $V_1$ of $q$ and $V_2 $ of $\pi \circ \x (q)$ such that $\pi \circ \x: V_1 \mapsto V_2 $ is a diffeomorphism. As such, $\pi|_{\x(V_1)}  = \pi|_{V}$ is injective, and that there exists a differentiable inverse $(\pi \circ \x)^{-1} : V_2 \mapsto V_1$. Since $\x$ is a homeomorphism, $V$ is a neighbourhood of $p$ in $S$. As such, the composition $(\pi \circ \x)^{-1} : (x,y) \to (u(x,y),v(x,y))$ with the function $(u,v) \to z(u,v)$ is $V$, hence $V$ is the graph of the differentiable function $z = z(u(x,y),v(x,y)) \coloneqq f(x,y)$. This proves the first case. The remaining cases are identical up to change of coordinates.
+\end{proof}
+
+
+The final proposition is an important one: if we already know that $S$ is a regular surface, and have $\x$ as a parametrisation, we do not need to check the continuity of $\x^{-1}$. 
+
+\begin{theorem}
+	\label{thmregularsurfaceparametrisationx-1iscontinuous}
+	Let $p \in S$ be a point of a regular surface $S$, and $\x: U \mapsto \R^3$ be a map with $p \in \x(U) \subset S$ such that \eqref{properties1} and \eqref{properties3} of \defnref{defregularsurfaces} holds, where $U \subset \R^2$ is open. $\x$ is an bijective map. Then, $\x^{-1}$ is continuous.
+\end{theorem}
+
+\begin{proof}
+	The argument is familiar. Let $\x(u,v) = (x(u,v), y(u,v), z(u,v) ) \in U$, and $q \in U$. By injectivity and differentiability, we can guarantee that $\pd{(x,y)}{(u,v)} \neq 0$. Let $\pi: \R^3 \mapsto \R^2$ be a projection map onto $xy$ plane. By inverse function theorem, there are neighbourhoods $V_1$ of $q$ and $V_2$ of $\pi \circ \x (q)$ in $\R^2$ such that $\pi \circ \x: V_1 \mapsto V_2$ is a diffeomorphism. By bijectivity, $\x^{-1}|_{\x(V_1)} = (\pi \circ \x)^{-1} \circ \pi$. As such, $\x^{-1}$ is a composition of continuous maps, which is continuous. 
+\end{proof}
+
+
+There are two more cases, which are of great importance to us ending this section. 
+
+\begin{example}
+	\label{exampleonesheetedcone}
+	Let
+	\begin{align}
+	\label{eqonesheetedcone}
+	z = + \sqrt{x^2 + y^2}, \qquad (x,y) \in \R^2
+	\end{align}
+	denote the one-sheeted cone. This is not a regular surface. Obviously, we cannot just conclude the surface is not regular by the fact that the ``natural'' parametrisation
+	\begin{align*}
+	(x,y) \to (x,y,+ \sqrt{x^2 + y^2})
+	\end{align*}
+	is not differentiable at the origin.
+	
+	To really show this surface is not regular, we use \thmref{thmlocalisomorphismbetweengeometryanddifferentiablefunction}. If $S$ were a regular surface, then it would be, in a neighbourhood of $(0,0,0) \in S$, the graph of a differentiable function having one of the three forms in the statement of the theorem. Obviously, the projections of $S$ onto $xz$ and $yz$ planes are not possible, since they will not be injective. The form $z=h(x,y)$ would have to agree, in a neighbourhood of $(0,0,0)$; however, $z=+\sqrt{x^2+y^2}$ is not differentiable at $(0,0)$---this is impossible again.
+\end{example}
+
+
+\begin{example}
+	\label{exampletorus2}
+	Another parametrisation of torus $T$ is
+	\begin{align}
+	\label{eqtorus2}
+		\x(u,v) = ( (r \cos u + a) \cos v , (r \cos u + a) \sin v , r \sin u  ), \qquad 0 < u < 2\pi, \: 0 < v < 2\pi
+	\end{align}
+	Both \defnref{defregularsurfaces}, \eqref{properties1} and \defnref{defregularsurfaces}, \eqref{properties3} are easily verified. The standard argument applies.
+	
+	In addition, by \thmref{thmregularsurfaceparametrisationx-1iscontinuous}, it remains to prove that $\x$ is bijective. Obviously, $\sin u = \frac{z}{r}$. In addition, $\sqrt{x^2 + y^2} \leq a \implies u \in [\frac{\pi}{2},\frac{3\pi}{2}]$, and $\sqrt{x^2 + y^2} \geq a \implies u \in (0,\frac{\pi}{2}]$ or $(\frac{3\pi}{2},2\pi]$. As such, given $(x,y,z)$, this determines $u$ and $v$ uniquely; hence, $\x$ is bijective. It then follows that the torus can be covered by three such coordinate neighbourhoods.
+\end{example}
+
+
+Having built the foundational items to the study of differential maps and surfaces (instead of entirely of curves), we present a series of interconnected topics on the fundamental forms and analyses on geometries.
+
+\subsection{Change of Parameters; Notion of Differentiability on Surfaces}
+The classical notion of differential geometry is to study the properties of surfaces which depend on their behaviour in a neighbourhood of a point. As such, \defnref{defregularsurfaces} is sufficient for such purpose. However, read the definition again: each point $P$ of a regular surface belongs to a coordinate neighbourhood. The points of such neighbourhood are characterised by the coordinates, and we should, therefore, be able to define the local properties which interest us in terms of these coordinates.
+
+A major problem arises when we speak of differentiability of a function in a neighbourhood of $p$: if we say $f: S \mapsto \R$ is a differentiable function at point $p$ of a regular surface $S$, a natural way to proceed is to choose a coordinate neighbourhood of $p$ (with coordinates $(u,v)$), and say that $f$ is differentiable at $p$ if its expression in the coordinates $u$ and $v$ admits continuous partial derivatives of all orders.
+
+However, it is possible to choose other coordinate systems in a neighbourhood of $p$ such that the observation is not true. This means that it is possible for the same point $p$ of $S$ to belong to different coordinate neighbourhoods. It is then our goal to show that when $p$ belongs to two coordinate neighbourhoods, it is possible to transform one coordinate pair to the other by means of a differentiable transformation. This is called \textit{change of parameters}.
+
+
+\begin{theorem}[Change of Parameters]
+	\label{thmchangeofparameters}
+	Let $p$ be a point on a regular surface $S$. Let $\x: U \mapsto S$ and $\y: v \mapsto S$ be two parametrisations of $S$, where $U,V \subset \R^2$ are open. In addition, let $p \in \x(U) \cap \y(V) \coloneqq W$. Then, the change of coordinates map $h \coloneqq \x^{-1} \circ \y : \y^{-1}(W) \mapsto \x^{-1} (W)$ is a diffeomorphism.
+\end{theorem}
+
+The usefulness of \thmref{thmchangeofparameters} is immense: it allows us to change coordinates however necessary, so, should one set of coordinates work and not the other, we can compose these differentiable maps and get another differentiable map. The proof is a little labyrinthine, but we will expose it slowly, so to see why such composition is a diffeomorphism.
+
+\begin{proof}
+	We know that $h = \x^{-1} \circ \y$ is a homeomorphism, since composition of homeomorphisms is a homeomorphism. But it is not possbile to conclude that $h$ is differentiable, since we do not know what a differentiable function is on $S$. 
+	
+	As such, we define $r \in \y^{-1}(W)$, and set $q = h(r)$. Since $\x(u,v)$ is a parametrisation, we assume $\pd{(x,y)}{(u,v)} \neq 0$, and extend $\x$ to a map $F : U \times R \to \R^3$ such that
+	\begin{align*}
+	F(u,v,t) = (x(u,v), y(u,v), z(u,v) + t ), \qquad (u,v) \in U, t \in \R
+	\end{align*}
+	This is a map from vertical cylinder $C$ over $U$ into a cylinder over $\x(U)$, by mapping each section of $C$ with height $t$ into the surface $\x(u,v) + t e_{3}$, where $e_3$ is the unit vector of the $z$-axis. As such, $F$ is clearly differentiable, and the restriction of $F$ to $U \times \set{0}$ is exactly $\x$. The differential $\D F_q$ is
+	\begin{align*}
+		\begin{bmatrix}
+			x_u & x_ v & 0 \\ y_u & y_v & 0 \\ z_u & z_v & 1 
+		\end{bmatrix}
+	\end{align*}
+	whose determinant is nonzero by assumption. Hence, we can apply the inverse function theorem, which guarantees the existence of a neighbourhood $M$ of $\x(q)$ in $\R^3$ such that $F^{-1}$ exists, and is differentiable in $M$.
+	
+	By continuity of $\y$ (the open set characterisation), there exists neighbourhood $N$ of $ r \in V$ such that $\y(N) \subset M$. And, restricted to $N$, $h|_{N} = F^{-1} \circ y|_{N}$, which is a composition of differentiable maps. By chain rule for maps, we can conclude that $h$ is differentiable at $r$. Since $r$ is arbitrary, $h$ is differentiable on $\y^{-1} (W)$.
+	
+	To show $h$ is differentiable, the argument is identical.
+\end{proof}
+
+
+Now, we speak of what it means for a function to be differentiable on a surface.
+
+\begin{definition}
+	\label{defdifferentiabilityonsurface}
+	Let $f:V \subset S \mapsto S$ be a function defined in an open subset $V$ of a regular surface $S$. Then, $f$ is said to be \textbf{differentiable at $p \in V$} if, for some parametrisation $\x: U \subset \R^2 \mapsto S$ with $p \in \x(U) \subset V$, the composition $f \circ \x: U \mapsto \R$ is differentiable at $\x^{-1} (p)$. $f$ is \textbf{differentiable in $V$} if it is differentiable at all points of $V$.
+\end{definition}
+
+
+\begin{remark}
+	It is immediate from \thmref{thmchangeofparameters} and \defnref{defdifferentiabilityonsurface} that differentiability on surfaces is independent of parametrisation $x$. In fact, if $\y: V \mapsto S$ is another paramterisation with $p \in \y(V)$, and if $h = \x^{-1} \circ \y$, then $f \circ \y = f \circ \x \circ h$ is also differentiable.
+\end{remark}
+
+\begin{remark}
+	It makes sense to abuse notation every now and then, and we will: we let $f$ and $f \circ \x$ be denoted by $f(u,v)$, with the intention of saying that $f(u,v)$ is the expression of $f$ in the system of coordinates $\x$. In other words, we are saying that this is equivalent to identifying $\x(U)$ with $U$, and thinking of $(u,v)$ as a point of $U$ and as a point of $\x(U)$ (expressed with coordinates $(u,v)$). 
+\end{remark}
+
+
+\begin{example}
+	\label{exampledistancesinR3}
+	Let $S$ be a regular surface, and $V \subset \R^3$ be an open set such that $S \subset V$. Let $f: V \mapsto \R$ be a differentiable function. Then, $f|_{S}$ is a differentiable function on $S$. For any $p \in S$, and parametrisation $\x: U \mapsto S $ in $p$, the composition $f \circ \x: U \mapsto \R$ is differentiable. The following are examples of such compositions:
+	
+	\begin{enumerate}
+		\item The \textbf{height function} relative to a unit vector $v \in \R^3$, $h: S \mapsto \R$, given by $h(p) = p \cdot v$ for $p \in S$ (this is the inner product in $\R^3$). $h(p)$ is the height of $p \in S$ relative to a plane normal to $v$ passing through the origin of $\R^3$. This is obviously a differentiable function on some surface $S$.
+		
+		\item Fix $p_0 \in \R^3$. The \textbf{fixed point distance function} $f_{p_0} (p)  = \abs{p-p_0}^2$ is a differentiable function.
+	\end{enumerate}
+\end{example}
+
+
+\begin{remark}
+	In the proof of \thmref{thmchangeofparameters}, we have made use of the fact that the inverse of $\x$ (parametrisation) needs to be differentiable. In addition, for \defnref{defdifferentiabilityonsurface} to make sense, we need \thmref{thmchangeofparameters}. Hence, it is required that the parametrisation of a regular surface $S$ to be a homeomorphism.
+\end{remark}
+
+Obviously, the notion of differentiability can be easily extended to mappings between surfaces.
+
+\begin{definition}
+	\label{defdifferentiablemaps}
+	Let $\phi: V_1 \subset S_1 \mapsto S_2$ be a continuous map from an open subset $V_1$ (of regular surface $S_1$) to regular surface $S_2$. Such map is \textbf{differentiable at $p \in V_1$} if, given paramterisation
+	\begin{align*}
+		\x_1 : U_1 \mapsto S_1  \\
+		\x_2 : U_2 \mapsto S_2
+	\end{align*}
+	with $p \in \x_1(U)$ and $\phi(\x_1(U_1)) \subset \x_2(U_2)$, then the map
+	\begin{align*}
+	\x_2^{-1} \circ \phi \circ \x_1 : U_1 \mapsto U_2
+	\end{align*}
+	is differentiable at $q = \x^{-1}_1 (p)$.
+\end{definition}
+
+The notion that differentiability of maps can be simplified as follows: $\phi$ is differentiable if, when expressed in local coordinates as $\phi(u_1,v_1) = (\phi_1(u_1,v_1),\phi_2(u_1,v_1))$, $\phi_1 $ and $\phi_2$ have continuous partial derivatives of all orders. We need to rigorously prove the definition.
+
+\begin{proof}[Proof of \defnref{defdifferentiablemaps}]
+	
+\end{proof}
+
+One more remark: differentiability should be closely associated with diffeomorphism, because the notion of diffeomorphism in differential geometry is identical to that of isomorphism in the study of vector spaces. In other words, from the point of view of differentiability, two diffeomorphic surfaces are indistinguishable. 
+
+\begin{example}
+	\label{exampleinverseofmapsbetweensurfacesisdifferentiable}
+	Let $\x: U \mapsto S$ be a parametrisation of a surface; then, $\x^{-1} : \x(U) \mapsto \R^2$ is a differentiable parametrisation. Why? The argument is similar; pick any $p \in \x(U)$, and any parametrisation $\y: V \mapsto S$ in $p$ (for $V \subset \R^2$). Then, we have $\x^{-1} \circ \y: \y^{-1}(W) \mapsto \x^{-1} (W)$, where $W = \x(U) \cap \y(V)$. This composition of differentiable maps is obviously differentiable. Hence, $U$ and $\x(U)$ are diffeomorphic. 
+\end{example}
+
+
+\begin{example}
+	\label{exampleR3diffeomorphisms}
+	Let $S_1$ and $S_2$ be regular surfaces. Assume $S_1 \subset V \subset \R^3$, where $V$ is an open subset. Let $\phi: V \mapsto \R^3$ be a differentiabe map such that $\phi(S_1) \subset S_2$. Then, restricting $\phi$ to $S_1$ gives the map $\phi|_{S_1} : S_1 \mapsto S_2$, which is a differentiable map. Again, the usual argument: if there exists parametrisations $\x_1 : U_1 \mapsto S_1$ and $\x_2 : U_2 \mapsto S_2$ such that $p \in \x_1(U_1)$ and $\phi(\x_1(U_1)) \subset \x_2(U_2)$, we have the map
+	\begin{align*}
+		\x_2^{-1} \circ \phi \circ \x_1 : U_1 \mapsto U_2
+	\end{align*}
+	is differentiable, as the composition of differentiable maps! This is an extremely general exposition. Specific examples are as follows.
+	
+	\begin{enumerate}
+		\item Let $S$ be a set of symmetric points\footnote{This easily generalises to surfaces!} relative to the $xy$ plane. Then, the map $\sigma: S \mapsto S$ is differentiable, since it is the restriction of $\sigma:\R^3 \mapsto \R^3$ (where $\sigma(x,y,z)=(x,y,-z)$) to $S$.
+		
+		\item The rotation map of angle $\theta$ about $z$-axis is also a differentiable map; specifically, let $S \subset \R^3$ be a regular surface invariant under this rotation. Hence, $\R_{z,\theta} : \R^3 \mapsto \R^3$ restricted to $S$ is differentiable.
+		
+		
+		\item $\psi : \R^3 \to \R^3$ defined by $\psi(x,y,z) = (ax,by,cz)$ is differentiable for all nonzero real numbers $a,b,c$. $\psi$ is clearly differentiable, and the restriction of $\psi|_{\sphere^2}$ is clearly differentiable (whre $\sphere^2$ is the sphere in $\R^3$) from the map of the sphere into the ellipsoid.
+	\end{enumerate}
+\end{example}
+
+\begin{remark}
+	\label{remregularsurfacesarelocallydiffeomorphictoR2}
+	Now, note that \defnref{thmchangeofparameters} implies that a parametrisation is a diffeomorphism of $U$ onto $\x(U)$ (see \exref{exampleinverseofmapsbetweensurfacesisdifferentiable}). As such, we have a new characterisations of regular surfaces: they are the subsets of $\R^3$ that are locally diffeomorphic to $\R^2$. This pretty characterisation of regular surfaces is the starting point of a treatment of surfaces.
+\end{remark}
+
+It is intuitively true, then, to see the theory of curves as subsets of $\R^3$. Let $I $ denote an open interval in $\R$; a \textbf{regular curve} in $\R^3$ is the subset $C \subset \R^3$ with the following property: for each point $p \in C$, there exists a neighbourhood $V$ of $p \in \R^3$ and a differentiable homeomorphism $\alpha: I \mapsto V \cap C $ such that the differential $\D \alpha_t $ is bijective for each $t \in I$. For such an example, see that arclength is independent of parametrisation. Properties (like torsion, curvature, etc) determined by arclength, for example, are then referred to as local properties of $C$. As such, the local theory developed earlier is valid for regular curves. Another intrinsic application of regular curves is that they can be used to for certain surfaces.
+
+\begin{example}
+	\label{examplesurfacesofrevolution}
+\end{example}
+
+
+Now, we see that parametrisation is possible on the curve, hence is possible on surfaces. It makes sense (sometimes) to define a parametrised surface.
+
+\begin{definition}
+	\label{defparametrisedsurfaces}
+	A \textbf{parametrised surface $\x : U \mapsto \R^3$}, where $U \subset \R^2$ is open, is a differentiable map. The set $\x(U) \subset \R^3$ is called the \textbf{trace} (image) of $\x$. $\x$ is \textbf{regular} is $\D \x_{q}  : \R^2 \mapsto \R^3$ is bijective for all $q \in U$. A point $p \in U$ where $\D \x_{q} $ is not bijective is called a \textbf{singular point} of $\x$.
+\end{definition}
+
+Finally, we see that one can extend the local concepts of differential geometry to regular paramterised surfaces.
+
+\begin{proposition}
+	\label{propimageunderregularparametrisedsurfaceisregularsurface}
+	Let $\x: U \mapsto \R^3$ be a regular parametrised surface, and $q \in U \subset \R^2$. Then, there exists a neighbourhood $V$ of $q \in \R^2$ such that $\x(V) \subset \R^3$ is a regular surface.
+\end{proposition}
+
+\begin{proof}
+	We make use of the inverse function theorem again. Suppose $\x(u,v) = (x(u,v),y(u,v),z(u,v))$ is a parameterisation of the surface $s$. By differentiability, $\x$ has differentiable components. Now, we construct a ``cylinder'' type of parametrisation
+	\begin{align*}
+	\y(u,v,t) = (x(u,v),y(u,v),z(u,v) + t ), \qquad (u,v) \in U, \: t \in \R
+	\end{align*}
+	which is obviously differentiable. Furthermore, by regularity condition of $\x$, we can assume that $\pd{(x,y)}{(u,v)} \neq 0$. Then, we see that $\det (\D y_{q}) \neq 0$. Hence, the inverse function theorem applies, and we can find $W \subset \R^2$ at $q$ and $T \subset \R^3$ at $\y(q)$ such that $\y : W \mapsto T$ exists, and its inverse $\y^{-1} : T \mapsto W$ is differentiable. Now, let $V = W \cap U$. Then, $\y|_{V} = \x|_{V}$, so $\x(V)$ is diffeomorphic to $V$, and by the characterisation in \remref{remregularsurfacesarelocallydiffeomorphictoR2}, we have the desired result.
+\end{proof}
+
+
+\subsection{Tangent Planes and Maps}
+It is important to keep the following notion in mind as we study tangent planes: the motivation for regularity condition (\defnref{defregularsurfaces}, \eqref{properties3}) is that we want to associate every $q \in U$ (where $U$ is the domain of the parameterisation of surface $S$) with tangent vectors. In other words, we want the existence of tangent vectors everywhere, passing through some points. Recall, also, the definition of the \textit{tangent vector}: let a (regular) surface admit some parametrisation $\alpha$. At some point $p \in S$, the tangent vector $\alpha'(p)$ is one that satisfies the following condition: $\alpha: (-\epsilon,\epsilon) \mapsto S \suchthat \alpha(0) = p$. The analysis done here is intrinsic to the study of differential geometry, because the following results are fundamental to low-dimension differential geometry.
+
+\begin{theorem}
+	\label{thmdifferentialofsubspaceistangentplane}
+	Let $\x: U \mapsto S$ under the usual qualifiers: $\x$ is a parametrisation of regular surface $S$, and $U \subset \R^2$ is open. The vector subspace of dimension 2,
+	\begin{align*}
+	\D \x_q (\R^2) \subset \R^3
+	\end{align*}
+	coincides with the set of tangent vectors to $S$ at $\x(q)$.
+\end{theorem}
+
+\begin{proof}
+	To show equivalence, we need to show (1) if $w$ is a tangent vector at $\x(q)$, then $w \in \D \x_q (\R^2)$; (2) if $w \in \D \x_q (\R^2)$, then $w \in \R^3$ is a tangent vector.
+	
+	\begin{enumerate}
+		\item Let $w $ be a tangent vector at $\x(q)$. Then, $w = \alpha'(0)$, where $\alpha: (-\epsilon,\epsilon) \mapsto \x(U) \subset S$ by definition. Moreover, $\alpha$ is differentiable with $\alpha(0) = \x(q)$. Since regular curves and surfaces can be stated as local diffeomorphisms of $\R^2$, ie. between sets $U $ and $\x(U)$ in $\R^2$,
+		\begin{align}
+		\label{eqbetachangeofcoordinatesfromRtoopensubset}
+		\beta = \x^{-1} \circ \alpha : (-\epsilon,\epsilon) \mapsto U
+		\end{align}
+		is a differentiable curve. By chain rule for maps, $\D \x_q (w) = \beta'(0)$. Hence, $w \in \D \x_q (\R^2)$.
+		
+		
+		\item Let $w = \D \x_q (v)$ for $v \in \R^2$. Since $v$ is velocity vector for some curve $\gamma : (-\epsilon,\epsilon) \mapsto U$ with $\gamma(t) = tv + q$, $t \in (-\epsilon,\epsilon)$, by definition of the differential at $q$, we have $w=\alpha'(0)$ (for $\alpha = \x \circ \gamma$). Hence, $w$ is a tangent vector.
+	\end{enumerate}
+	
+	\noindent This concludes the proof of equivalence.
+\end{proof}
+
+\begin{remark}
+	From \thmref{thmdifferentialofsubspaceistangentplane}, it is obvious that the plane $\D \x_q (\R^2)$ passing through $\x(q) = p$ does not depend on parametrisation $\x$. This plane is called the \textbf{tangent plane to $S$ at $p$}, which we will denote as $T_p (S)$. There is an obvious basis to this choice of parametrisation (for sake of clarity and not repeating it in the subsequent exposition, we will use this basis unless otherwise stated):
+	\begin{align}
+		\label{eqbasisfortangentplanes}
+		\set{ \dpd{\x}{u}(q) , \dpd{\x}{v}(q) } \qquad \left( \text{or } \set{\x_u,x_v} \right)
+	\end{align}
+\end{remark}
+
+\begin{remark}
+	Furthermore, the coordinates of any vector $w \in T_p (S)$ will be determined by the basis \eqref{eqbasisfortangentplanes} as follows. Since $w$ is the velocity vector of $\alpha'(0)$ of the curve $\alpha = \x \circ \beta$, for $\beta:(-\epsilon,\epsilon) \mapsto U$ (and $\beta(t) = (u(t),v(t))$ with $\beta(0) = q = \x^{-1}(q)$), then
+	\begin{align}
+		\nonumber \alpha'(0) &= \dod{}{t} (\x \circ \beta) (0) = \dod{}{t} \x( u(t), v(t) ) (0)  \\
+		\label{eqwincoordinatechartsbasis} &= \x_u (q) u'(0) + \x_v (q) v'(0) = w
+	\end{align}
+	so, $w $ is expressed in $(u(t),v(t))$, with coordinates $(u'(0),v'(0))$, in this parametrisation $\x$ of a curve whose velocity at $t=0$ is $w$.
+\end{remark}
+
+With the notion of tangent plane comes the notion of differentiable maps between surfaces.
+
+\begin{definition}
+	\label{defdifferentialmapsbetweensurfaces}
+	Let $S$ and $T$ denote distinct regular surfaces, with $\phi: V \mapsto T$, where $V\subset S$ is open, be a differentiable map. For $p \in V$, since every tangent vector $w \in T_p(S)$ is the velocity vector $\alpha'(0)$ of some differentiable parametrised curve $\alpha:(-\epsilon,\epsilon) \mapsto V$ with $\alpha(0) = p$, then the curve $\beta = \phi \circ \alpha$ is such that $\beta(0) = \phi(p)$. It then follows that $\beta'(0)$ is a vector of $T_{\phi(p)}(S)$\footnote{Put $\phi$ instead of $\x$ in \eqref{eqbetachangeofcoordinatesfromRtoopensubset}, then we have this result.}.
+\end{definition}
+
+\begin{theorem}
+	\label{thmtangentofchangedcoordinatesindepofparametrisation}
+	Let $\beta$ and $w$ be defined as above, in \defnref{defdifferentialmapsbetweensurfaces}. Then, $\beta'(0)$ is \textit{independent of parametrisation}, ie. independent of the choice of $\alpha$. Furthermore, $\D \phi_p : T_p(S) \mapsto T_{\phi(p)} (T)$ defined by $ T_{\phi(p)} (w) = \beta'(0)$ is a linear map.
+\end{theorem}
+
+\begin{proof}
+	Let $\x(u,v)$ and $\overline{\x}(\overline{u},\overline{v})$ denote two different parametrisations of some regular surface $S$ around some neighbourhoods of $p$ and $\phi(p)$, respectively. In particular, per our definition before, let
+	\begin{align*}
+		\phi(u,v) &= (\phi_1(u,v),\phi_2(u,v)) \\
+		\alpha(t) &= (u(t),v(t))
+	\end{align*}
+	From an earlier remark, we said that, per definition of $\beta(t)$ in \eqref{eqbetachangeofcoordinatesfromRtoopensubset}, we have $\beta(t) = (\phi_1(u(t),v(t)),\phi_2(u(t),v(t)))$, and $\beta'(0)$ can be expressed in $(u(t),v(t))$ by
+	\begin{align}
+	\label{eqnewcoordinates}
+	\beta'(0) = \left( \dpd{\phi_1}{u} u'(0) + \dpd{\phi_1}{v} v'(0) , \dpd{\phi_2}{u} u'(0) + \dpd{\phi_2}{v} v'(0)  \right)
+	\end{align}
+	so $\beta'(0)$ depends only on $\phi$, $(u'(0),v'(0))$, and \eqref{eqbasisfortangentplanes}. The same relation shows $\beta'(0)$ is exactly the differential map:
+	\begin{align*}
+		\beta'(0) = \D \phi_p (w) = \begin{bmatrix*}[c]
+			\vert & \vert \\ \dpd{\phi}{u} & \dpd{\phi}{v} \\ \vert & \vert
+		\end{bmatrix*} \begin{bmatrix*}[c]
+			u'(0) \\ v'(0)
+		\end{bmatrix*}
+	\end{align*}
+	hence this takes the coordinates $(u'(0),v'(0))$ to \eqref{eqnewcoordinates}, and is indeed a linear map.
+\end{proof}
+
+\noindent The next proposition depends strongly on some of the terminology we have built before. In particular, we need to define what is meant by \textit{local diffeomorphism}: $\phi: U \mapsto V$ (where $U \subset \R^n$ and $V \subset \R^n$ are open sets) is a local diffeomorphism if, for every $x \in U$, there exists neighbourhoods $U_x$ and $V_x$ such that $x \in U(x)$, $\phi(x) \in V_{\phi(x)}$, and $\phi|_{U_x} : U_x \mapsto V_{\phi(x)}$ is a diffeomorphism.
+
+\begin{proposition}
+	\label{propdifferentialisisomorphismimpliesmapislocaldiffeomorphism}
+	Let $S_1$, $S_2$ be regular surfaces. If $\phi: U \subset S_1 \mapsto S_2$ is a differential map such that $\D \phi_p$ is an isomorphism, then $\phi$ is a local diffeomorphism.
+\end{proposition}
+
+\begin{proof}
+	This is a straightforward application of inverse function theorem: note that \thmref{thmtangentofchangedcoordinatesindepofparametrisation} says that $\D \phi_p$ is a linear map. Since we assume it is an isomorphism, it is invertible. Hence, by the inverse function theorem, there exists neighbourhoods $V$ and $T$ such that $\phi : V \mapsto T$ is differentiable, and has a differentiable inverse. Obviously, $\phi|_{V}$ is a local diffeomorphism.
+\end{proof}
+
+
+
+
+\subsection{The First Fundamental Form and Area}
+From the point of view of differentiability, surfaces are distinguished up to diffeomorphisms---which has helped us classify different regular surfaces. Now, we focus on geometric structures carried by the surface. One of the most important forms is the first fundamental form, which comes from a very natural structure on any surface in $\R^3$. It is the \textit{inner product} in $\R^3$. In particular, the most natural inner product of $S \subset \R^3$ induces on each tangent plane $T_p(S)$ (of regular surface $S$) an inner product, which we denote by $\innerproduct{\cdot}{\cdot}_{p}$. If $w_1,w_2 \in T_p(S)$, then $\innerproduct{w_1}{w_2}_{p} =$ inner product of $w_1 $ and $w_2$ in the $\R^3$ sense. In other words, to this inner product---which is a symmetric, bilinear form on $\R^3$---there corresponds a quadratic form $\I_p : T_p (S) \mapsto \R$ given by
+\begin{align}
+	\label{eqfirstfundamentalform}
+	\I_p (w) = \innerproduct{w}{w}_{p} = \abs{w}^2 \geq 0
+\end{align}
+which is called the \textit{first fundamental form}.
+
+\begin{definition}
+	\label{deffirstfundamentalform}
+	The quadratic form $\I_p$ on $T_p (S)$, defined by \eqref{eqfirstfundamentalform}, is called the \textbf{first fundamental form} of the regular surface $S \subset \R^3$ at $p \in S$.
+\end{definition}
+
+\begin{remark}
+	The first fundamental form describes how a regular surface of $\R^3$ inherits the natural inner product of $\R^3$. As we will see later, the first fundamental form will allow us to make measurements on the surface without referring to the ambient space $\R^3$, where the surface lies in.
+\end{remark}
+
+It now makes sense to see how the first fundamental form works, instead of theorems and propositions for such a form in $\R^3$. We present a series of examples to illuminate the properties of $\I_p (S)$ associated with parametrisations, in addition to the first fundamental measurement that we learned in primary school: \textit{area}.
+
+First, let us express the first fundamental form in the basis \eqref{eqbasisfortangentplanes} associated to a parametrization $\x(u,v)$ at $p$ (ie. at some point on a regular surface). For notational simplicity, notice that for any $w \in S$, $\innerproduct{w}{w}_p = \innerproduct{w}{w}_{\R^3}$, so we drop the $p$ subscript from hereon. Then, expressing $w = \alpha'(0) = \x_u (q) u'(0) + \x_v (q) v'(0)$ (ie. \eqref{eqwincoordinatechartsbasis}) gives the inner product
+\begin{align}
+	\nonumber \innerproduct{w}{w} &= \innerproduct{\x_u (q) u'(0) + \x_v (q) v'(0)}{\x_u (q) u'(0) + \x_v (q) v'(0)} \\
+	\nonumber &= \innerproduct{\x_u}{\x_u} (u')^2 + 2 \innerproduct{\x_u}{\x_v} (u')(v') + \innerproduct{\x_v}{\x_v} (v')^2 \\
+	\label{eqfirstfundamentalforminlocalcoordinates} &\coloneqq E (u')^2 + 2 F (u')(v') + G (v')^2
+\end{align}
+using the convention that $E \coloneqq \innerproduct{x_u}{x_u}$, $F \coloneqq \innerproduct{x_u}{x_v} $, and $G \coloneqq \innerproduct{x_v}{x_v} $. This is the expression of the first fundamental form. There are many contexts in which our lives are easier when we express geometries in the first fundamental form, per \eqref{eqfirstfundamentalforminlocalcoordinates}.
+
+\begin{example}
+	\label{exampleplanepassingthroughp0}
+	Let $P \subset \R^3$ be the plane passing through $p_0 \coloneqq (x_0,y_0,z_0)$, containing $w_1 \coloneqq (a_1,a_2,a_3)$ and $w_2 \coloneqq (b_1,b_2,b_3)$. Then, one can parametrise the plane using the typical construction:
+	\begin{align*}
+	\x(u,v) = p_0 + u w_1 + v w_2, \qquad (u,v) \in \R^2
+	\end{align*}
+	The first fundamental form is then
+	\begin{align*}
+		\I_p &= E (w_1)^2 + 2 F (w_1)(w_2) + G (w_2)^2
+	\end{align*}
+	since $\x_u = w_1$ and $\x_v = w_2$. Since $w_1 \perp w_2$, then $E=1$, $F=0$, $G=1$. So,
+	\begin{align*}
+		\I_p &=  (u')^2 + (v')^2
+	\end{align*}
+	is an analogue to Pythagoras' theorem in the plane $P$.
+\end{example}
+
+\begin{example}
+	\label{examplerightcylinder}
+	The right cylinder, extending $x^2 + y^2 = 1$ upwards in the $z$-axis, can be parametrised by
+	\begin{align*}
+	\x(u,v) = (\cos u, \sin u, v)
+	\end{align*}
+	The fundamental form is calculated as follows: note $\x_u = (-\sin u, \cos u, 0)$ and $\x_v = (0,0,1)$. Hence, $E =1$, $F=0$, and $G=1$.
+	
+	As we will see later, the fact that the first fundamental forms of \exref{exampleplanepassingthroughp0} and \exref{examplerightcylinder} coincide is due to some intrinsic fact about these surfaces. 
+\end{example}
+
+\begin{example}
+	\label{examplehelicoid}
+	The helix in two dimensions is a spiral; the \textit{helicoid} in three dimensions is an upward spiralling disk. It can easily be parametrised as $\x(u,v) = (v \cos u, v \sin u, au)$ for $u \in (0,2\pi)$ and $v \in (-\infty,\infty)$. Before we calculate the helicoid's first fundamental form, we need to first classify helicoid as a regular surface! The verification is fairly straightforward:
+	\begin{enumerate}
+		\item Trivially true.
+		\item Given $z \in \R$, $z = au \implies u = \frac{z}{a}$. This implies $u$ is uniquely determined. Given this $u$, $v$ can be uniquely determined. This implies $x$ is injective and surjective, so $\x^{-1}$ is guaranteed to exist. It remains to show $\x^{-1}$ is continuous. Let us explicitly construct its inverse: let
+		\begin{align*}
+		\phi (x,y,z) = \begin{cases}
+		\left( \frac{y}{\sin z} , z \right) & \text{ if } \sin z \neq 0 \\
+		\left( \frac{x}{\cos z} , z \right) & \text{ if } \cos z \neq 0
+		\end{cases}
+		\end{align*}
+		This is obviously continuous: the cases for $\phi$ agree where they overlap, and at every point of $S$ either $\cos z$ or $\sin z$ is nonzero, so $\phi$ is globally defined and continuous. You can show by computation that $\phi \circ \x(u,v) = (u,v)$ for all $(u,v)\in \R^2$, and $\x \circ\phi(x,y,z) = (x,y,z)$ for all $(x,y,z)\in S$. Thus $\phi$ is a continuous inverse for $\x$, hence $\x$ is a homeomorphism onto its image.
+		\item See that
+		\begin{align*}
+		\D \x_q (w) &= \begin{bmatrix*}[c]
+			- v \sin u & v \cos u & a \\
+			\cos u & \sin u & 0
+		\end{bmatrix*} = 0
+		\end{align*}
+		iff $w = (0,0,0)$. Hence, $\D \x_q$ is an injective map.
+	\end{enumerate}
+	Now, the first fundamental form follows from direct calculations: observe that $\x_u = (-v\sin u, v \cos u, a)$ and $x_v = (\cos u, \sin u, 0)$, so 
+	\begin{align*}
+		E &= v^2 + a^2 \\
+		F &= 0 \\
+		G &= 1 
+	\end{align*}
+\end{example}
+
+As is obvious at this point, the first form is \textit{fundamental} because it lets us answer metric questions without reference to the ambient space in $\R^3$. In particular, we see the following example.
+
+\begin{example}
+	\label{examplearclengthfirstfundamentalform}
+	Note that the arclength $s(t)$ can be given by
+	\begin{align*}
+		s(t) = \int_{0}^{t} \abs{\alpha'(s)} \D s = \int_{0}^{t} \sqrt{I(\alpha'(s))} \D s
+	\end{align*}
+	in particular, if $\alpha(t) = (u(t),v(t))$ is contained in a coordinate neighbourhood corresponding to some parametrisation $\x(u,v)$, then the arclength can be calculated by
+	\begin{align*}
+		s(t) = \int_{0}^{t} \sqrt{E (u')^2 + 2 F (u')(v') + G (v')^2} \D s
+	\end{align*}
+\end{example}
+
+
+\begin{example}
+	\label{exampleanglebetweencurvesatintersection}
+	The angle $\theta$ of intersection which two regular curves $\alpha: I \mapsto S$ and $\beta: I \mapsto S$ can be explicitly calculated using the first fundamental form. Suppose $\alpha$, $\beta$ intersect at $t=t_0$. Then, using the cosine formula for angles between two vectors, we have
+	\begin{align}
+		\cos \theta = \frac{\innerproduct{\alpha'(t)}{\beta'(t)}}{\abs{\alpha'(t)} \abs{\beta'(t)}}
+	\end{align}
+	we can also calculate the angle between coordinate curves under parametrisation $\x(u,v)$; denote it as $\phi$. Then,
+	\begin{align}
+		\label{eqanglebetweencoordinatecurves}
+		\cos \phi = \frac{\innerproduct{x_u}{x_v}}{\abs{x_u} \abs{x_v}} = \frac{F}{\sqrt{EG}}
+	\end{align}
+	this allows us to affirm (partly) the aforementioned assertion: that the first fundamental form lets us measure some intrinsic metric questions \textit{without} reference to some space, but just the parametrisation.
+\end{example}
+
+\begin{corollary}
+	\label{cororthogonalcoordinatecurves}
+	Two coordinate curves of some parametrisation $\x(u,v)$ (ie. the map $\x: U \mapsto S$) are orthogonal iff $F(u,v) = 0$ for all $(u,v) \in U$.
+\end{corollary}
+
+\begin{proof}
+	Follows directly from \eqref{eqanglebetweencoordinatecurves}.
+\end{proof}
+
+\begin{example}
+	\label{examplesphereinsphericalcoordinates}
+	Consider the sphere in spherical coordinates, ie. 
+	\begin{align*}
+		\x(\theta,\phi) = (\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+	\end{align*}
+	and notice that $\x_{\theta} = (\cos \theta \cos \phi, \cos \theta \sin \phi, -\sin \theta)$ and $\x_{\phi} = (-\sin \theta \sin \phi, \sin \theta \cos \phi, 0)$. As such, we have $E=1$, $F=0$, and $G = \sin^2 \theta$. 
+	
+	How can we think about this heuristically? Let $w$ be a tangent vector to the sphere at the coordinate curve $\x(\theta,\phi)$, given in the basis in \eqref{eqbasisfortangentplanes} (\textit{mutatis mutandis}, change $(u,v)$ into the new coordinates). Then, $w = a \x_{\theta} + b \x_{\phi}$. Then,
+	\begin{align*}
+		\abs{w}^2 &= \I_p (w) = Ea^2 + 2F ab + G b^2 \\
+		&= a^2 + (\sin^2 \theta) b^2 
+	\end{align*}
+	As such, the arclength of the angle between two coordinate curves is independent of parametrisations.
+\end{example}
+
+
+As yet another application of the first fundamental form, let us characterise the curves in the coordinates $\x(u,v)$ that make a constant angle $\beta$ with meridians $\phi$ (which is a constant). In other words,
+\begin{align*}
+\cos \beta &= \frac{\innerproduct{x_\theta}{\alpha'(t)}}{\abs{x_{\theta}} \abs{\alpha'(t)}} \\
+&=\frac{\theta'}{\sqrt{(\theta')^2 + (\phi')^2 \sin ^2 \theta}}
+\end{align*}
+obviously, we said before that $\alpha'(t)$ has coordinates $(\theta',\phi')$, and $\x_{\theta} $ has coordinates $(1,0)$, so calculating the angle $\beta$ requires
+\begin{align*}
+\cos^2 \beta &= \frac{(\theta')^2}{(\theta')^2 + (\phi')^2 \sin ^2 \theta} \\
+\sin^2 \beta &= \frac{ (\phi')^2 \sin ^2 \theta }{(\theta')^2 + (\phi')^2 \sin ^2 \theta} \\
+\tan^2 \beta &= \frac{(\phi')^2 \sin ^2 \theta}{(\theta')^2}
+\end{align*}
+and the last line gives us 
+\begin{align*}
+(\theta')^2 \tan^2 \beta -  (\phi')^2 \sin ^2 \theta = 0 \implies \frac{\theta'}{\sin \theta} = \pm \frac{\phi'}{\tan \beta}
+\end{align*}
+and by integration by parts, we have
+\begin{align}
+\label{eqanglebetweencoordinatescurves}
+\log \left[ \tan \frac{\theta}{2} \right] = \pm (\phi + c) \cot \beta
+\end{align}
+
+
+As we can see, knowing these properties really help us answer some metric questions about geometries. Now, we can formulate the area of a bounded region of a regular surface $S$. The usual definitions from calculus applies in this case: a \textit{domain} of a regular surface $S$ is an open, connected subset such that $\partial $ is the image of a circle in $S$ under a  parametrisation $\x$---except at finitely many points. A \textit{region} of $S$ is the union of domain with $\partial S$. $S \subset \R^2 $ is \textit{bounded} if $S \subset B(\alpha,\beta) \subset $ the ambient space.
+
+Now, another nice property about coordinate neighbourhoods: if $\x : U \mapsto S$ is a parametrisation of some regular surface $S$, and $Q \subset U$ is compact, then $\x(Q)$ is compact by continuity of of $\x$. Compactness implies closed and bounded of $\x(Q)$.
+
+Recall from calculus that the area of the parallelogram spanned by $\x_u$ and $\x_v$ is given by $\abs{\x_u \wedge \x_v}$. There are two steps in this verification.
+\begin{enumerate}
+	\item \uline{Claim:} given a region $Q$, the integral
+	\begin{align*}
+		\iint_Q \abs{\x_u \wedge \x_v} \D u \D v
+	\end{align*}
+	is independent of parametrisation! To prove this, let $\overline{\x}$ be another parametrisation of the curve. Let $\overline{\x} : \overline{U} \mapsto S$ denote the map, with $R \subset \overline{\x} (\overline{U})$ and $\overline{Q} = \overline{\x}^{-1} (R)$. Now, the change of parameters function is the composition map $h = \x^{-1} \circ \overline{\x}$. Hence, every map other than $\x$ is only up to some change of parameters. Hence the integral is independent of parametrisation.
+	
+	\item Then,
+	\begin{align*}
+		\iint_{\overline{Q}} \abs{\overline{\x}_u \wedge \overline{\x}_v} \D \overline{u} \D \overline{v} &= \iint_{\overline{Q}} \abs{\overline{\x}_u \wedge \overline{\x}_v} \abs{\dpd{(u,v)}{(\overline{u},\overline{v})}} \D \overline{u} \D \overline{v}  \\
+		&= \iint_Q \abs{\x_u \wedge \x_v} \D u \D v
+	\end{align*}
+	where the second line follows from change of variables.
+\end{enumerate}
+
+Now we see that measurement on the regular surface $S$ is done entirely using the first fundamental form. We can formally establish a definition of \textit{area}.
+
+\begin{definition}
+	\label{defarea}
+	Let $S$ be a regular surface in a coordinate neighbourhood $\x: U \mapsto S$. The positive number 
+	\begin{align}
+	\label{eqarea}
+	A(R) = \iint_{Q} \abs{\x_u \wedge \x_v} \D u \D v 
+	\end{align}
+	with $Q = \x^{-1} (R)$ is the \textbf{area} of $R$.
+\end{definition}
+
+Observe a fundamental relation between vector and inner products: 
+\begin{align}
+	\label{eqvectorinnerproducts}
+	\abs{\x_u \wedge \x_v}^2+ \innerproduct{\x_u}{\x_v}^2 = \abs{\x_u}^2 \abs{\x_v}^2
+\end{align}
+using \eqref{eqvectorinnerproducts} we have the relation
+\begin{align}
+	\label{eqareaparallelogramusingfirstfundamentalform}
+	\abs{\x_u \wedge \x_v}^2 = \sqrt{EG - F^2}
+\end{align}
+
+\begin{example}
+	\label{exampleareaoftorus}
+	Parametrise the torus as $\x(u,v) = ((a+r\cos u)\cos v , (a+r\cos u) \sin v, r \sin u)$, for $u,v \in (0,2\pi)$. Obviously, $E = r^2$, $F =0 $, and $G = (r \cos u + a)^2$. The integrand of the area function is given by first fundamental form
+	\begin{align*}
+		\sqrt{EG - F^2} = \sqrt{r^2 (r \cos u + a)^2} = r (r \cos u + a)
+	\end{align*}
+	and the area can be obtained by taking the region arbitrarily closer to the surface. To this end, let
+	\begin{align*}
+	Q_{\epsilon} \coloneqq \condset{(u,v) \in \R^2}{u,v}{\in}{(\epsilon,2\pi-\epsilon)}
+	\end{align*}
+	hence
+	\begin{align*}
+	A(R_\epsilon) &= \iint_{Q_\epsilon} r (r \cos u + a) \D u \D v \\
+	&= \left( \int_{\epsilon}^{2\pi-\epsilon} r(r \cos u +a) \D u \right) \left( \int_{\epsilon}^{2\pi-\epsilon} \D v \right) \\
+	&= \eval{\left[ r^2 \sin u + a r u \right]}_{\epsilon}^{2\pi - \epsilon} (2\pi - 2\epsilon)  \\
+	&= r^2 (2\pi - 2\epsilon) (\sin(2\pi - \epsilon) - \sin \epsilon) + ra (2\pi - 2\epsilon)^2
+	\end{align*}
+	letting $\epsilon \to 0$ gives $A(R) = 4\pi^2 r a$, which is exactly the formula derived using calculus.
+\end{example}
+
+
+
+\subsection{Orientation of a (Regular) Surface}
+By way of exposition, let us fix $p \in S$, where $S$ is a surface of some kind (does not need to be regular, but regularity does help in some situations). It is noted before that the vector subspace coincides with the set of tangent vectors on $S$, hence $T_p (S)$ exists, and this choice of tangent plane induces a natural orientation in a neighbourhood of $p$. This is the case when there is a positive movement along sufficiently small closed curves about each point of the neighbourhood. Furthermore, if this is possible for every $p \in S$, then in the intersection of any two neighbourhoods, the orientations must coincide. 
+
+Beyond heuristics, we must speak of coordinate neighbourhoods. Fix a parametrisation $\x(u,v)$, as usual. This determines the tangent plane in some neighbourhood around $p \in S$, ie. the orientation of the associated ordered basis in \eqref{eqbasisfortangentplanes}. If $p$ belongs to another coordinate neighbourhood, parametrised by $\overline{\x}(\overline{u},\overline{v})$, then the new basis can be expressed by a change of variable:
+\begin{align*}
+	\overline{\x}_{\overline{u}} &= \x_u \dpd{u}{\overline{u}} + \x_v \dpd{v}{\overline{u}} \\
+	\overline{\x}_{\overline{v}} &= \x_u \dpd{u}{\overline{v}} + \x_v \dpd{v}{\overline{v}}
+\end{align*}
+where $u \coloneqq u(\overline{u},\overline{v})$ and $v \coloneqq v(\overline{u},\overline{v})$ are the expressions of the change of coordinates. Notice that these new coordinates are the dot products of the old coordinates with the Jacobian, $\dpd{(u,v)}{(\overline{u},\overline{v})}$. As such, the bases determine the same orientation iff the Jacobian is positive!
+
+\begin{definition}
+	\label{deforientation}
+	Let $S$ be a regular surface. $S$ is \textbf{orientable} if it is possible to choose a family of covers of $S$ in a way such that if $p \in S$ belongs to any two coordinate neighbourhoods (of this family), then the change of coordinates map has a positive Jacobian at $p$. The choice of such family is called an \textbf{orientation}. If no such family exists, then the surface $S$ is \textbf{nonorientable}.
+\end{definition}
+
+\begin{example}
+	\label{examplesphereisorientable}
+	The sphere is orientable! Pick two parameterisations, expressed in $(u,v)$ and $(\overline{u},\overline{v})$. Pick the intersection $W$ of these neighbourhoods such that $W$ is a connected set (all except the north and south poles). If the Jacobian $J$ is negative, the flip the coordinates. Now, since $J \neq 0$ in the intersection $W$, and $J >0$ for $p \in W$, we conclude that by connectedness of $W$, $J >0$ everywhere!
+\end{example}
+From this example we have the following fact.
+
+\begin{fact}
+	\label{factcharacterisationoforientability}
+	If a regular surface $S$ can be covered by two coordinate neighbourhoods whose intersection is connected, then the surface is orientable.
+\end{fact}
+
+Since we are working primarily in $\R^3$, let us find the geometric heuristics for orientability in $\R^3$. From the definition of tangent planes, given a coordinate system and parametrisation $\x(u,v)$ at $p$, it is possible to choose a unique (up to scalar) unit normal vector $N$ such that
+\begin{align*}
+N = \frac{\x_u \wedge \x_v}{\abs{\x_u \wedge \x_v}} (p)
+\end{align*}
+In other words, if we pick another local coordinate system $(\overline{u},\overline{v})$, the new normal vector is up to some change of coordinates:
+\begin{align*}
+\overline{\x}_{\overline{u}} \wedge \overline{\x}_{\overline{v}} = (\x_u \wedge \x_v) \dpd{(u,v)}{(\overline{u},\overline{v})}
+\end{align*}
+In other words, $N$ either preserves or changes the sign of the new direction, up to the sign on the Jacobian.
+
+\begin{definition}
+	\label{defdifferentiablefieldofunitnormalvectors}
+	A \textbf{differentiable field of unit normal vectors} on an open set $ U \subset S$ is a differentiable map $N : U \mapsto \R^3$ such that $\forall q \in U$, $N(q) \in \R^3$ to $S$ at $q$ is a unit normal vector.
+\end{definition}
+
+
+Now, the following fact is heuristically true.
+
+\begin{theorem}
+	\label{thmregularorientablesurfaceiffdifffieldunitnormalexists}
+	A regular surface $S \subset \R^3$ is orientable iff there exists a differentiable field of unit normal vectors on $S$.
+\end{theorem}
+
+\begin{proof}
+	$(\Rightarrow)$ By an earlier argument, there exists two coordinate neighbourhoods such that their intersection is connected, and the Jacobian in the intersection is positive. For all $p = \x(u,v)$, define $N(p) = N(u,v)$. Since $p $ belongs to two coordinate neighbourhoods, it must be the case that $N(u,v) = N(\overline{u},\overline{v})$ by definition of orientability. Since the coordinate functions of $N(u,v)$ are differentiable (and are functions of $(u,v)$), it then follows that $N : U \mapsto \R^3$, where $U \subset S $ is open, is differentiable.
+	
+	
+	$(\Leftarrow)$ If $N$ is a differentiable field of unit normal vectors on $S$, then let $(C_n)$ be a family of connected coordinate neighbourhoods on $S$. For each $p = \x(u,v)$ and each coordinate neighbourhood $\x(U)$, where $U \subset \R^2$, by the continuity of $N$, $N(p) = \frac{\x_u \wedge \x_v}{\abs{\x_u \wedge \x_v}} $. Then, it follows that the inner product
+	\begin{align*}
+	\innerproduct{N(p)}{\frac{\x_u \wedge \x_v}{\abs{\x_u \wedge \x_v}} } = f(p) = \pm 1
+	\end{align*}
+	Repeat this for all choices of coordinate neighbourhoods until we are certain that the Jacobian is positive for any choices of two coordinate neighbourhoods. This is possible because, if not, we will have an impossible case of $N(p) = -N(p)$. Since the Jacobian is positive at the intersection of any two coordinate neighbourhoods, by Fact \ref{factcharacterisationoforientability}, $S$ is orientable.
+\end{proof}
+
+We have already seen that the graph of a differentiable function is orientable. Now, we will see that the preimage of a differentiable function is also orientable.
+
+\begin{theorem}
+	\label{thmpreimageofregularvaluedifffunctionisorientable}
+	Let a regular surface $S = \condset{(x,y,z) \in \R^3}{f(x,y,z)}{=}{a}$, where $f : U \mapsto \R$ (under the usual assumption that $U \subset \R^3$ is open), and $a $ is a regular value of $f$. $S$ is orientable.
+\end{theorem}
+
+\begin{proof}
+	Given a point $p = (x_0,y_0,z_0) \in S$, consider a parametrised curve $(x(t),y(t),z(t))$ passing through $p$ at $t=t_0$. Since the curve is on $S$, then $f(x(t),y(t),z(t)) = a$ for all $t $. Then, the total derivative at $t=t_0$ is then given by
+	\begin{align*}
+	f_x (p)  \eval{\dod{x}{t}}_{t=t_0} + f_y (p)  \eval{\dod{y}{t}}_{t=t_0}+ f_z (p)  \eval{\dod{z}{t}}_{t=t_0} &= 0 \\
+	\text{ equivalently } \begin{bmatrix*}[c]
+	f_x (p) \\ f_y (p) \\ f_z (p) 
+	\end{bmatrix*} \cdot \begin{bmatrix*}[c]
+%	\od{x}{t} \\ \od{y}{t} \\ \od{z}{t}
+	x_t \\ y_t \\ z_t
+	\end{bmatrix*}_{t = t_0} &=0
+	\end{align*}
+	ie. the tangent vector to curve at $t=t_0$ is orthogonal to vector $(f_x,f_y,f_z)$ at $p$. Since the curve and point are chosen arbitrarily, we have that
+	\begin{align*}
+	N(x,y,z) = \left( \frac{f_x}{\sqrt{f_x^2 + f_y^2 + f_z^2}} , \frac{f_y}{\sqrt{f_x^2 + f_y^2 + f_z^2}} , \frac{f_z}{\sqrt{f_x^2 + f_y^2 + f_z^2}} \right)
+	\end{align*}
+	is a valid choice of differentiable field of unit normal vectors. As such, by \thmref{thmregularorientablesurfaceiffdifffieldunitnormalexists}, the surface $S$ is orientable.
+\end{proof}
+
+
+
+
+\subsection{The Definition of Area}
+Now we want to justify the area mentioned in \defnref{defarea}, since it is completely nontrivial to see why that should be the definition anyways.
+
+To start off, if we wish to define area of $R \subset S$, we must start with a \textit{partition} $\powerset$ of $\R$, of finitely regions whose union is the entire subset. To this end, let $(R_i)_{i=1}^{n}$ be a partition of $R$. Define the \textit{diameter} of an arbitrary set $A$ as
+\begin{align}
+\label{eqdiam}
+\diam(A) = \sup \condset{\norm{x-y}_{\R^3}}{x,y}{\in }{A}
+\end{align}
+Define the diameter for every $R_i \in \powerset$. Then, $\sup_{i} \set{\diam(R_i)} \coloneqq \mu$ is called the \textit{norm} of $\powerset$. As in any real analysis context, we can always take \textit{refinements} of $\powerset$, denoted $\powerset^*$ for now, if we take partitions of every $R_i \in \powerset$.
+
+Now, given a partition of $R$, we choose arbitrary points $p_i \in R_i$ and project $R_i$ onto the tangent plane at $p_i$, in the direction of the normal line at $p_i$. Denote this projection as $\overline{R}_i$, and the area by $A(\overline{R}_i)$. Then, the formal sum $\sum_i A(\overline{R}_i) $ is what is heuristically well understood as the area of a surface $A$. If it is the case that we can no longer choose better refinements, ie. $(\mu_n) \xrightarrow{n\to\infty} 0$, then the limit of the sum is independent of all choices. This is the case where the formal sum converges to a real value, ie. this is the \textbf{area of $A$}, defined as
+\begin{align*}
+A(R) = \lim\limits_{\mu_n \to 0} \sum_i A(\overline{R}_i)
+\end{align*}
+With this, we can formally prove that a bounded region of a regular surface does have an area! In particular, if we restrict ourselves to bounded regions contained in a coordinate neighbourhood, we can easily obtain an expression for the area in terms of the coefficients of the first fundamental form (in the corresponding coordinate system).
+
+
+\begin{theorem}
+	\label{thmareaofboundedregionincoordinateneighbourhoodexists}
+	Let $\x: U \subset S$ be a coordinate system in a regular surface $S$, and $R = \x(Q)$ is a bounded region of $S$ contained in $\x(U)$. Then, the area is $R$ exists, and is given by \eqref{eqarea}.
+\end{theorem}
+
+
+
+\clearpage
+\section{The Gauss Map}
+
+Per the last few sections, we can induce an orientation on some surface $S$ (per \defnref{deforientation}). It then makes sense to speak of a map $T_p(S) \mapsto T_p(S)$. Obviously, there are a lot of ways to parametrise the tangent plane at any given point. There is a canonical way of inducing a map from a tangent plane to itself.
+
+\begin{definition}
+	\label{defgaussmap}
+	Let $S \subset \R^3$ be a regular surface with orientation induced by the unit normal vector $N$. Then, the map
+	\begin{align}
+		\label{eqgaussmap}
+		\begin{aligned}
+			N &: S \to \R^3  \\
+			&: S \mapsto \sphere^2
+		\end{aligned}
+	\end{align}
+	where $\sphere^2 \coloneqq \condset{(x,y,z)}{x^2+y^2+z^2}{=}{1}$. Then, the map $N$ in \eqref{eqgaussmap} is called the \textbf{Gauss map}.
+\end{definition}
+
+It is not difficult to show that the Gauss map is differentiable. The component functions are differentiable, because $\D N_p : T_p (\sphere) \mapsto T_{N(p)} (\sphere^2)$, and $T_{N(p)}(\sphere^2)$ can be thought of as the same vector space as $T_p(\sphere)$.
+
+The question is: how does one define $\D N_p$? For each parametrised $\alpha(t)$ in $T_p (S)$, such that $\alpha(0) = p$ (by definition), the parametrisation $N(\alpha(t)) = N \circ \alpha (t) = N(t) $ in the sphere $\sphere^2$. This is equivalent to the restriction of the normal vector $N$ to $\alpha(t)$. In addition, the tangent vector $N'(0) = \D N_p (\alpha'(0))$ by the chain rule. This is indeed a vector in $T_p(S)$. As such, the tangent induced here measures the rate of change of tangents restricted to $\alpha'(0)$, as well as the normal vectors restricted to $\alpha(t)$ at $t=0$! Put it in another way, $\D N_p$ measures the rate and how the normal vector pulls away from $N(p)$---the Gauss map evaluated at $p$. It is worth noting that, if we consider curves, $\D N_p $ is a number, while for planes or surfaces, $\D N_p$ is a linear map. For example, the plane has $\D N \equiv 0$ everywhere. The unit sphere is slightly more interesting, because, depending on parametrisation, $(x,y,z) \perp (x',y',z')$. Hence, there are two choices of the unit normal, either $N_1 = (x,y,z)$, or $N_2 = (-x,-y,-z)$. Depending on orientation, we get either $\D N = -v$ or $\D N = v$. for all $p \in \sphere^2$ and $v \in T_p (\sphere^2)$. 
+
+By way of example, let us analyse the coordinate neighbourhood of cylinders, with base of a unit circle in the $xy$-plane. From previous calculation, if we pick the tangent vector to be parallel to the $xy$-plane, then $\D N_1 = 0v = 0$; if we pick the tangent vector to be perpendicular to the $xy$-plane, we get $\D N_2 = - N_2$. By some linear algebra, we have the fact that, because $\D N$ is a linear map, $N_1$ and $N_2$ are eigenvectors with corresponding eigenvalues $\lambda_1$ and $\lambda_2$. We love linear objects, since calculations are easy on linear maps. By this example, we can calculate $\D N_p$ at $p=(0,0,0)$ on the surface $z=y^2 - x^2$, which is a hyperbolic paraboloid. We pick the parametrisation $\x(u,v) = (u,v,v^2-u^2)$, and we have $\x_u = (1,0,-2u)$, $\x_v = (0,1,2v)$, and
+\begin{align}
+\label{eqnormalcylinder}
+N = \frac{\x_u \wedge \x_v}{\abs{\x_u \wedge \x_v}} &= \left( \frac{u}{\sqrt{u^2 + v^2 + \frac{1}{4}}} , - \frac{v}{\sqrt{u^2 + v^2 + \frac{1}{4}}} , \frac{1}{2 \sqrt{u^2 + v^2 + \frac{1}{4}}} \right)
+\end{align}
+and the Gauss map is interesting here at $p$ because at $\x_u$ and $\x_v$, unit normals here agree with the $x$- and $y$-axes, respectively. Hence, the tangent vector at $p$ on $S$ under the curve $\alpha(t)$ (with $\alpha(0)= p$) has coordinates $(u'(0),v'(0),0)$ from \eqref{eqnormalcylinder}. And, by definition of Gauss map, restricting $N(u,v)$ to the curve $\alpha(t)$,, calculating $N'(0)$ gives $N'(0) = (2u'(0),-2v'(0),0)$, and this presents the case $\D N_p (u'(0),v'(0),0) = (2u'(0),-2v'(0),0)$. This means the surface has the eigenvectors $(1,0,0)$ and $(0,1,0)$ with eigenvalues $2$ and $-2$, respectively.
+
+Now, we will discuss why the Gauss map is an important object for one to study, along with some of its properties that are fundamental to the constructions of familiar objects in the sense of geometry.
+
+\subsection{Fundamental Properties of the Gauss Map}
+We begin with the following definition and property.
+
+\begin{definition}
+	\label{defselfadjoint}
+	A linear map $A : V \mapsto V$ (where $V$ is a vector space) is \textbf{self-adjoint} if, for all $v,w \in V$, $\innerproduct{Av}{w} = \innerproduct{v}{Aw}$.
+\end{definition}
+
+\begin{proposition}
+	\label{propselfadjointquadraticform}
+	There exists a bijective correspondence between every self-adjoint map and quadratic form of $V$.\footnote{The proof of this is deferred to the appendix.}
+\end{proposition}
+
+\begin{proposition}
+	\label{propgaussmapdifferentialselfadjoint}
+	The differential of Gauss map, $\D N_p : T_p (S) \mapsto T_p (S)$, is self-adjoint.
+\end{proposition}
+
+\begin{proof}
+	The main idea is to show that $\D N_p$ is linear (which we already did), then find a suitable choice of basis such that the differential evaluated in these coordinates coincides with the normal vectors.
+	
+	To start off, pick some basis, call them $\set{w_1,w_2}$ of $T_p (S)$. Since $\D N_p$ is linear, it remains to show that $\innerproduct{\D N_p (w_1)}{w_2} = \innerproduct{ w_1}{ \D N_p(w_2)}$. Let
+	\begin{itemize}
+		\item $\x(u,v)$ be the parametrisation of surface $S$,
+		\item $\set{\x_u,\x_v}$ be the basis of $T_p (S)$,
+		\item $\alpha(t) = \x(u(t),v(t))$ be a parametrised curve in $S$, and, by definition, $\alpha(0) = p$.
+	\end{itemize}
+	Then, we have that 
+	\begin{align*}
+	\D N_p (\alpha'(0)) &= \D N_p (\x_u u'(0) + \x_v v'(0) ) & \\
+	&= \dod{}{t} \eval{N(u(t),v(t))}_{t=0} & \text{ by definition } \\
+	&= N_u u'(0) + N_v v'(0) &
+	\end{align*}
+	hence we have, by linearity of $\D N_p$, 
+	\begin{align*}
+	\begin{cases}
+		\D N_p (\x_u) = N_u \\
+		\D N_p (\x_v) = N_v
+	\end{cases}
+	\end{align*}
+	which proves the fact that the differential evaluated at these coordinates of $T_p (S)$ is exactly the normal vectors.
+	
+	If the map is self-adjoint, it must then be the case that $\innerproduct{N_u}{\x_v} = \innerproduct{\x_u}{N_v}$. Now, taking the derivatives of $\innerproduct{N}{\x_u} = 0$ and $ \innerproduct{N}{\x_v} = 0$ (both of which follows by construction!) gives
+	\begin{align*}
+		\dod{}{v} \left(\innerproduct{N}{\x_u}  \right) &= \innerproduct{N}{\x_{uv}} + \innerproduct{N_v}{\x_u} \\
+		\dod{}{u} \left(\innerproduct{N}{\x_v}  \right) &= \innerproduct{N}{\x_{vu}} + \innerproduct{N_u}{\x_v}
+	\end{align*}-
+	and, by equivalence of cross partials (guaranteed by Clairaut's/Young's theorem), we have
+	\begin{align*}
+		\innerproduct{N_u}{\x_v} = -\innerproduct{N}{\x_{uv}}  = \innerproduct{N_v}{\x_u} 
+	\end{align*}
+	as desired.
+\end{proof}
+
+\begin{remark}
+	By \propref{propselfadjointquadraticform}, to $\D N_p$, we can associate the map with $Q $ in $T_p (S)$, defined as
+	\begin{align}
+		\label{eqselfadjointquadraticform}
+		Q(v) = \innerproduct{\D N_p (v)}{v}, \qquad \forall v \in T_p (S)
+	\end{align}
+	and, for reasons that will be clear by the end of this section, we care mostly about $-Q(v)$. Because this is so fundamental, we give it a name.
+\end{remark}
+
+\begin{definition}
+	\label{defsecondfundamentalform}
+	The quadratic form $\II_p$, defined on $T_p (S)$ by $\II_p (v) = - \innerproduct{\D N_p (v)}{v} \coloneqq - Q(v) $ (by \eqref{eqselfadjointquadraticform}) is referred to as the \textbf{second fundamental form of $S$ at $p$}.
+\end{definition}
+
+With this structure, we can obtain some fairly interesting objects associated with these maps.
+
+\begin{definition}
+	\label{defnormalcurvature}
+	Let $C$ be a regular curve in some surface $S$. Let $C$ pass through some point $p \in S$. Furthermore, define
+	\begin{itemize}
+		\item $k$ as the curvature of $C$ at $p$,
+		\item $n $ is the normal vector to $C$ at $p$,
+		\item $N $ is the normal vector to $S$ at $p$,
+		\item $\cos \theta  = \innerproduct{n}{N}$.
+	\end{itemize}
+	Then, $k_n = k \cos \theta $ is the \textbf{normal curvature of $C \subset S$ at $p$}.
+\end{definition}
+
+\begin{remark}
+	From \defnref{defnormalcurvature}, it is clear that $k_n$ is the length of the projection of $kn$ over the normal vector to the surface $S$ at $p$. The sign of the projection is given by the orientation $N$ of $S$ at $p$. It is also clear that this \textit{does not depend on the parametrisation}, but only the orientation.
+\end{remark}
+
+One might ask: what is the point of defining $\II_p$? To see that, by definition, we need to resort to definitions for a while. Fix a surface $S$ and a curve in $S$, which we call $C$ for convenience/clarity. In particular, we can parametrise the curve by arclength $s$, in which case we get $\alpha(s)$ satisfying the initial condition $\alpha(0) = p$. Let $N(s)$ be the restriction of normal vector $N$ to the curve $\alpha(s)$. We then have the fact that $\innerproduct{N(s)}{\alpha'(s)} = 0$. In other words,
+\begin{align*}
+0 = \innerproduct{N(s)}{\alpha'(s)}' &= \innerproduct{N'(s)}{\alpha'(s)} + \innerproduct{N(s)}{\alpha''(s)} \\
+\implies \innerproduct{N'(s)}{\alpha'(s)} &= - \innerproduct{N(s)}{\alpha''(s)} 
+\end{align*}
+then it follows that
+\begin{align*}
+	\II_p (\alpha'(0)) &= - \innerproduct{\D N_p (\alpha'(0))}{\alpha'(0)} \\
+	&= - \innerproduct{N'(0)}{\alpha'(0)} \\
+	&= \innerproduct{N(0)}{\alpha''(0)} \\
+	&= \innerproduct{N(0)}{kn} (p) \\
+	&= k_n (p)
+\end{align*}
+hence, the second fundamental form evaluated at some point $p$ can be seen as the normal curvature of the surface evaluated using a parametrised curve $\alpha$. Equivalently, we have the following proposition.
+
+\begin{proposition}[Meusnier]
+	\label{propmeusnier}
+	All curves lying on a surface $S$, which have (at a given point $p \in S$) the same tangent line, have the same normal curvature at $p$.
+\end{proposition}
+
+Now, let us see how we can use \propref{propmeusnier} in tandem with all the definitions we've built on earlier. By way of example, see that if we pick $(1,0,0)$ as the normal to $\sphere^2$, all the normal sections of $\sphere^2$ through $p \in \sphere^2$ are unit circles. In other words, all normal curvatures on this surface are 1. The second fundamental form then, by construction, is $\II_p (v) = 1$ for all $p \in \sphere^2$ and $v \in T_p (S)$ with $\abs{v} = 1$.
+
+Think about the benefits of using the curvature as a unit of measurement of the linear map $\D N_p$: the maximum and minimum of which correspond to the eigenvalues of the map. From a basic fact in linear algebra (the proof of which deferred, again, to the appendix), we have the following proposition:
+
+\begin{proposition}
+	\label{propeigenvaluesinducebasis}
+	For all $p \in S$, there exists an orthonormal basis $\set{e_1,e_2}$ of $T_p (S)$ such that $\D N_p (e_1) = -k_1 e_1$ and $\D N_p (e_2) = -k_2 e_2$. In other words, $k_1$ and $k_2$ correspond to the extreme values of the normal curvature at $p$.
+\end{proposition}
+
+
+\begin{definition}
+	\label{defprincipalcurvature}
+	Let $k_1 \coloneqq \max_n k_n$ and $k_2 \coloneqq \min_n k_n$. The, $k_1$ and $k_2$ are called the \textbf{principal curvature at $p \in S$}.
+\end{definition}
+
+\begin{definition}
+	\label{defprincipaldirection}
+	The corresponding directions of principal curvatures are called \textbf{principal directions at $p$}.
+\end{definition}
+
+\begin{definition}
+	\label{deflineofcurvature}
+	If a regular curve $C$ on $S$ has the property that for all $p \in C$, the tangent line of $C$ is in the principal direction at $p$, $C$ is the \textbf{line of curvature}.
+\end{definition}
+
+The following proposition is important enough that we state it alone.
+
+\begin{proposition}
+	\label{propolinderodrigues}
+	A necessary and sufficient condition for connected regular curve $C$ on $S$ to be a line of curvature of $S$ is for the following to hold true:
+	\begin{align}
+		\label{eqolinderodrigues}
+		N'(t) = \lambda(t) \alpha'(t)
+	\end{align}
+	for any parametrisation $\alpha(t)$ of $C$, $N(t) = N \circ \alpha(t)$, $\lambda(t) $ is a differentiable function in $t$, and $-\lambda(t)$ is the principal curvature of $\alpha'(t)$.
+\end{proposition}
+
+
+\begin{proof}
+	If $\alpha'(t)$ is contained in the principal direction, $\alpha'(t)$ is eigenvector of $\D N$. This means
+	\begin{align*}
+	\D N(\alpha'(t)) &= N'(t) = \lambda(t) \alpha'(t)
+	\end{align*}
+	and the converse is immediate.
+\end{proof}
+
+It is important to note that principal curvaures at a point allows us to calculate the normal curvature along a given direction of $T_p (S)$. Let $v \in T_p (S)$, and $\abs{v} = 1$. By a theorem (deferred to the appendix again), there exist an orthonormal basis in $T_p (S)$; denote this $\set{e_1,e_2}$. So, $v = e_1 \cos \theta + e_2 \sin \theta$, where $\theta $ is angle from $e_1 $ to $v$ induced by the orientation of $T_p (S)$. Then, the normal curvature is given by
+\begin{align*}
+	k_n &= \II_p (S) = - \innerproduct{\D N_p (v)}{v} \\
+	&= -\innerproduct{\D N_p (e_1 \cos \theta + e_2 \sin \theta )}{e_1 \cos \theta + e_2 \sin \theta} \\
+	&= -\innerproduct{-e_1 k_1  \cos \theta - e_2 k_2 \sin \theta }{e_1 \cos \theta + e_2 \sin \theta} \\
+	&= e_1 \cos^2 \theta + e_2 \sin^2 \theta
+\end{align*}
+This is often referred to as the \textit{Euler's formula}.
+
+Another fundamental property we want to exploit is the linearity of $\D N_p$. In particular, this means the map admits a matrix representation, of the form
+\begin{align*}
+A = \begin{bmatrix*}[c]
+a_{11} & a_{12} \\ a_{21} & a_{22}
+\end{bmatrix*}
+\end{align*}
+which is, here, in the vector subspace of dimension 2. By definition, 
+\begin{align*}
+\det (A) &= a_{11} a_{22} - a_{12} a_{21} \\
+\tr (A) &= a_{11} + a_{22}
+\end{align*}
+It is an elementary fact that determinant and trace are independent of the choice of basis. As such, we have
+\begin{align*}
+\det (\D N_p) &= (-k_1) (-k_2) = k_1 k_2   \\
+\tr (\D N_p) &= -(k_1 + k_2)
+\end{align*}
+where $k_1$, $k_2$ are principal curvatures of the surface $S$. Hence, if the orientation of these surfaces change, determinant remains, but trace is up to change of signs. As such, we have the following definition:
+
+\begin{definition}
+	\label{defGaussianmeancurvature}
+	For some surface $S$, let $p \in S$, and $\D N_p: T_p (S) \mapsto T_p (S)$ is the differential of the Gauss map. Then,
+	\begin{itemize}
+		\item $K = \det (\D N_p)$ is the \textbf{Gaussian curvature of $p \in S$}.
+		\item $H =- \frac{1}{2} \tr (\D N_p)$ is the \textbf{mean curvature of $p \in S$}.
+	\end{itemize}
+	ie.
+	\begin{align*}
+	K &= k_1 k_2 \\
+	H &= \frac{k_1 + k_2}{2}
+	\end{align*}
+\end{definition}
+
+\begin{definition}
+	\label{defehpppoints}
+	A point $p \in S$ (on a surface) is 
+	\begin{enumerate}
+		\item \textbf{Elliptic} if $\det (\D N_p) > 0$.
+		\item \textbf{Hyperbolic} if $\det (\D N_p)<0$.
+		\item \textbf{Parabolic} if $\det (\D N_p) = 0$ and $\D N_p \neq 0$!
+		\item \textbf{Planar} if $\det (\D N_p) = 0$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	\label{defumbilicalpoint}
+	Let $p \in S$, at which $k_1=k_2$. Then, $p$ is an \textbf{umbilical point}.
+\end{definition}
+
+\noindent As should be intuitively true from definition, the following proposition captures an essential quality of surfaces composed of umbilical points.
+
+\begin{proposition}
+	\label{propumbilicalpoints}
+	If all points of a connected surface $S$ are umbilical points, then $S$ is contained in either a sphere or a plane.
+\end{proposition}
+
+\begin{proof}
+	Here is the idea: if we can prove that $\D N(t)$ is some constant vector in the local neighbourhood, we have proven that it is either a plane or a sphere (plane is when $\D N(t) \equiv 0$, while sphere is when $\D N(t) \equiv c \in \R$). We can then extend the result by connectedness.
+	
+	The technicalities are slightly less manageable. We fix $p \in S$, and let $\x(u,v)$ be a parametrisation of $S$ at $p$. Let $V$ be a connected local neighbourhood of $p$. Since we assumed for all $q \in V$, $q$ is an umbilical point, this means the Gaussian curvature is constant throughout $V$. In particular, this means for all $w = a_1 \x_u + a_2 \x_v \in T_q (S)$, by \propref{propolinderodrigues},
+	\begin{align}
+	\label{eqolinderodriguesresult}
+	\D N(w)  = \lambda(q) w
+	\end{align}
+	where $-\lambda(q)$ is the principal curvature, and $\lambda(q)$ is a differentiable real-valued function. It remains to show that $\lambda(q)$ is constant function in $V$. Notice if we write \eqref{eqolinderodriguesresult} as
+	\begin{align*}
+	N_u a_1 + N_v a_2 = \lambda(\x_u a_1 + \x_v a_2)
+	\end{align*}
+	we then have, by the fact that $w$ is arbitrarily chosen,
+	\begin{align}
+	\label{eqconstructionN}
+	\begin{cases*}
+	N_u = \lambda \x_u \\
+	N_v = \lambda \x_v
+	\end{cases*}
+	\end{align}
+	and since cross partials are equal, we have
+	\begin{align*}
+	\lambda_v \x_u - \lambda_u \x_v = 0
+	\end{align*}
+	which, by linear independence of $\set{\x_u,\x_v}$, $\lambda_u = \lambda_v = 0$. As such, by a proposition from real analysis, $\lambda = c \in \R$ throughout $V$.
+	
+	There are two cases:
+	\begin{enumerate}
+		\item \uline{If $\lambda \equiv 0$ in $V$}: then $N_u = N_v = 0 \implies N = N_0 \in \R$ in $V$. Hence, $\innerproduct{\x(u,v)}{N_0} = 0$ throughout $V$, since its derivatives w.r.t. $u$ and $v$ are both zeros.
+		
+		\item \uline{If $\lambda \not\equiv 0$ in $V$ (but is still constant throughout)}: it then remains to see that
+		\begin{align*}
+		\left( \x - \frac{1}{\lambda} N \right)_u = \left( \x - \frac{1}{\lambda} N \right)_v = 0
+		\end{align*}
+		and
+		\begin{align}
+		\label{eqconstructiony}
+			y(u,v) \coloneqq \x(u,v) - \frac{1}{\lambda} N(u,v)
+		\end{align}
+		is fixed by construction in \eqref{eqconstructionN}. Since $\abs{\x(u,v) - \y(u,v)}^2 = \frac{1}{\lambda^2}$, all points in $V$ are contained in a sphere centred at $y$ with radius $\frac{1}{\abs{\lambda}}$.
+	\end{enumerate}
+	
+	Now that we've established the result in a local sense, it remains to extend the result globally. By connectedness of $V$, we can find a path $\alpha:[0,1] \mapsto S \suchthat \alpha(0) = 0$ and $\alpha(1) = r$, under the usual qualifiers. For each $\alpha(t) \in S$, there exists a(n) (open) neighbourhood $V_t \subset S \suchthat $ it is contained in plane or sphere, by the previous part. Moreover, $\alpha^{-1} (V_t)$ is an open interval in $[0,1]$ by the continuity of $\alpha$, and obviously $[0,1] = \bigcup_{t \in [0,1]} \alpha^{-1} (V_t)$. By compactness, ie. Heine-Borel property, for every open cover there exist a finite subcover, so $[0,1] = \bigcup_{t =1}^{n} \alpha^{-1} (V_t)$. As such, either of the following is true:
+	\begin{enumerate}
+		\item If points of one of these neighbourhoods are in a plane, all other will be in the same plane, since $r$ was arbitrarily chosen, and all points of $S$ belong to a plane locally;
+		\item \textit{Mutatis mutandis}, if points belong to a sphere, every point belongs to the sphere.
+	\end{enumerate}
+	This concludes the proof.
+\end{proof}
+
+Now, two more definitions are integral to the study of the Gauss map. The following build on a series of important definitions from before, and allow us to quantify the behaviour of curves using normal curvature.
+
+
+\begin{definition}
+	\label{defasymptoticdirectioncurve}
+	Fix some surface $S$, and let $p \in S$. An \textbf{asymptotic direction of $p \in S$} is a direction of $T_p (S)$ for which $k_n = 0$ (zero normal curvature).
+	
+	A regular, connected curve $C \subset S$ such that for all $p \in C$, the tangent line of $C$ at $p$ is an asymptotic direction is called an \textbf{asymptotic curve}.
+\end{definition}
+
+\begin{remark}
+	Obviously, an elliptic point has no asymptotic direction.
+\end{remark}
+
+\begin{definition}
+	\label{defconjugatedirectioncurve}
+	Under the usual qualifiers on $S$, let $p \in S$. Two \textit{nonzero vectors} $w_1,w_2 \in T_p (S)$ are \textbf{conjugate} if
+	\begin{align}
+		\label{eqconjugate}
+		\innerproduct{\D N_p (w_1)}{w_2} = \innerproduct{\D N_p (w_2)}{w_1} = 0
+	\end{align}
+	
+	Two \textit{directions} $r_1,r_2$ at $p$ are \textbf{conjugate} if parallel vectors $w_1, w_2 $ to $r_1, r_2$ (respectively) are conjugates.
+\end{definition}
+
+\begin{remark}
+	It is obvious that conjugate directions are independent of the choices of vectors and $r_1, r_2$.
+\end{remark}
+
+
+
+
+\subsection{Local Coordinate System and the Gauss Map}
+It makes sense to speak of the Gauss map in an abstract sense, in order to make certain definitions clear. However, in contexts when the geometry of curves and surfaces are apparent, we want to associate a local coordinate system to the Gauss map. As is always the case, there is a natural choice if we are confined to the Euclidean space.
+
+To this end, let us fix a parametrisation of $S$ with the usual notations: $\x : U \mapsto S$, $U \subset \R^2$ is open, and assume this parametrisation is compatible with the orientation $N$ of $S$. In $\x(U)$, we the have $N = \frac{\x_u \wedge \x_v}{\abs{\x_u \wedge \x_v}}$ as the result. Let $p \in S$, and $\alpha : [0,1] \to C$, $\alpha(t) = \x(u(t),v(t))$ be a parametrised curve on $S$, with the conditions $\alpha(0) = p$ and that $\alpha$ is differentiable. Now, the tangent vector at $p$ can be described using the standard basis of the tangent space (in \eqref{eqbasisfortangentplanes})
+\begin{align*}
+\alpha' &= \x_u u' + \x_v v' \\
+\D N(\alpha') &= N'(u(t),v(t)) = N_u u' + N_v v'
+\end{align*}
+And, since $N_u, N_v \in T_p (S)$, we can write
+\begin{align*}
+	N_u &= a_{11} \x_u + a_{12} \x_{v} \\
+	N_v &= a_{21} \x_u + a_{22} \x_{v}
+\end{align*}
+this means
+\begin{align*}
+	\D N_(\alpha') &= (a_{11} \x_u + a_{12} \x_{v}) u' + ( a_{21} \x_u + a_{22} \x_{v} ) v' \\
+	&= (a_{11}u' + a_{21} v') \x_u + (a_{12} u' + a_{22} v') \x_v  \\
+	\implies \D N \begin{pmatrix*}[c]
+	u' \\ v'
+	\end{pmatrix*} &= \begin{bmatrix*}[c]
+	a_{11} & a_{12} \\ a_{21} & a_{22}
+	\end{bmatrix*} \begin{pmatrix*}[c]
+	u' \\ v'
+	\end{pmatrix*}
+\end{align*}
+as such, we've shown $\D N(\alpha')$ is a linear map! The corresponding second fundamental form is then the normal curvature
+\begin{align*}
+	\II_p (\alpha') &= -\innerproduct{\D N(\alpha')}{\alpha'} \\
+	 &= -\innerproduct{N_u u' + N_v v' }{\x_u u' + \x_v v'} \\
+	 &= e(u')^2 + 2f (u')(v') + g (v')^2
+\end{align*}
+where $\innerproduct{N}{\x_u} = \innerproduct{N}{\x_v} = 0 $ because $\x_u,\x_v \in T_p (S)$. The coefficients to these basis vectors are
+\begin{align*}
+	e &= - \innerproduct{N_u}{\x_v} = \innerproduct{N}{\x_{uu}} \\
+	f &= - \innerproduct{N_v}{\x_u} = \innerproduct{N}{\x_{uv}} = - \innerproduct{N_u}{\x_v} \\
+	g &= - \innerproduct{N_v}{\x_v} = \innerproduct{N}{\x_{vv}}
+\end{align*}
+It is clear, now, that it is advantageous to associate a local coordinate system to the Gauss map. We have a way of recovering the matrix of coefficients on $\D N(\alpha')$, by using the coefficients from the first fundamental form! In particular, still using the basis \eqref{eqbasisfortangentplanes},
+\begin{align}
+\label{eqcoordinatesrelation}
+- \begin{bmatrix*}[c]
+e & f \\ f & g 
+\end{bmatrix*} & = \begin{bmatrix*}[c]
+a_{11} & a_{12} \\ a_{21} & a_{22}
+\end{bmatrix*} \begin{bmatrix*}[c]
+E & F \\ F & G 
+\end{bmatrix*}  \\
+%
+\nonumber \implies \begin{bmatrix*}[c]
+a_{11} & a_{12} \\ a_{21} & a_{22}
+\end{bmatrix*} &= - \begin{bmatrix*}[c]
+e & f \\ f & g 
+\end{bmatrix*} \begin{bmatrix*}[c]
+E & F \\ F & G 
+\end{bmatrix*}^{-1}  \\
+%
+\nonumber  &= - \frac{1}{EG - F^2} \begin{bmatrix*}[c]
+e & f \\ f & g 
+\end{bmatrix*} \begin{bmatrix*}[c]
+G & -F \\ -F & E 
+\end{bmatrix*} \\
+%
+\nonumber  &= - \frac{1}{EG - F^2} \begin{bmatrix*}[c]
+eG - fF & -eF + fE \\ fG - gF & -fF + gE 
+\end{bmatrix*} 
+\end{align}
+giving rise to the system
+\begin{align}
+\label{eqweingarten}
+\begin{cases*}
+a_{11} = \dfrac{fF - eG}{EG - F^2} \\
+a_{12} = \dfrac{eF - fE}{EG - F^2} \\
+a_{21} = \dfrac{gF - fG}{EG - F^2} \\
+a_{22} = \dfrac{fF - gE}{EG - F^2}
+\end{cases*}
+\end{align}
+and \eqref{eqweingarten} is known as the \textbf{Weingarten equations}. In addition, immediate from \eqref{eqcoordinatesrelation}, we have
+\begin{align}
+\label{eqmeancurvaturecharacterisation}
+K = \det ( [a_{ij}]_{i,j} ) = \frac{eg- f^2}{EG - F^2}
+\end{align}
+and, because $-k_1$, $-k_2$ are eigenvalues of $\D N$, the absolute values of these quantities satisfy the condition for diagonalisation:
+\begin{align*}
+	\D N(v) = -kv = -kIv \qquad v \in T_p (S), v \neq 0
+\end{align*}
+where $I $ is the identity map. We then observe that $\D N(v) + kI $ is not invertible, hence it has zero determinant, resulting in the fact that
+\begin{align*}
+	\det \begin{pmatrix*}[c]
+	a_{11} + k & a_{12} \\ a_{21} & a_{22} + k
+	\end{pmatrix*} = 0
+\end{align*}
+implying
+\begin{align*}
+	k^2 + (a_{11} + a_{22}) k + (a_{11} a_{22} - a_{12} a_{21}) = 0 
+\end{align*}
+because $k_1$, $k_2$ are the roots to the equation (or zeros of the characteristic polynomial), we have that
+\begin{align*}
+	k_{i} = \frac{ -(a_{11} + a_{22}) \pm \sqrt{(a_{11} + a_{22})^2 - 4 (a_{11} a_{22} - a_{12} a_{21}) } }{2}, \qquad i = 1,2
+\end{align*}
+hence
+\begin{align}
+	H = \frac{1}{2} (k_1 + k_2) = - \frac{a_{11} + a_{22}}{2} = \frac{1}{2} \frac{eG - 2fF + gE}{EG - F^2}
+\end{align}
+characterises the mean curvature solely independent of parametrisation. In addition, this means we can write
+\begin{align}
+\nonumber k^2 - 2Hk + K &= 0 \\
+\label{eqeigenvaluesofdN} k &= H \pm \sqrt{H^2 - K}
+\end{align}
+From this relation, we can see that if $k_1 (q) \geq k_2(q)$ for some $q \in S$, then the functions $k_1$, $k_2$ are continuous in $S$. In addition, these functions are differentiable, perhaps except at the umbilical points of $S$ (where $H^2 = K$).
+
+\clearpage
+\section{Intrinsic Geometry of Surfaces}
+
+
+
+
+
+
+
+\clearpage
+\section{Global Differential Geometry}
+
+
+
+
+
+
+
+\clearpage
+
+\appendix
+
+\section{Preliminaries from Real Analysis}
+
+\label{apppreliminaries}
+
+\begin{fact}
+	In single variable calculus,
+	\begin{enumerate}[label=(\arabic*)]
+		\item $f: (0,1) \to V$, where $f$ is continuous and bijective, then $g =f^{-1}$ exists and $g : f((0,1)) \to (0,1)$ is continuous and bijective.
+		\item By chain rule, note that
+		\begin{align*}
+		g(f(x)) &= x \\
+		\implies g'(f(x)) &= \frac{1}{f'(x)} \\
+		\implies g'(y) &=  \frac{1}{f'(x)}
+		\end{align*} 
+	\end{enumerate}
+\end{fact}
+
+A natural question that arises is \textit{under what conditions} does 
+$$f:U \to V$$
+(where $U \subset \R^p $ and $V \subset \R^q$) actually admit an inverse? To be specific, we want to be able to say/answer
+\begin{enumerate}[label=(\arabic*)]
+	\item Conditions under which $f$ is a bijective, continuously differentiable function?
+	\item If $f$ is differentiable, is $g=f^{-1}$ differentiable?
+\end{enumerate}
+
+\begin{obs}
+	There are plenty of elementary functions that have \textit{no} global inverses. For example, take $f(x) = \frac{1}{x^2}$. It is obviously now that we need to avoid $f'(x) = 0 \implies x= 0$, at which the function is \textit{not} invertible.
+\end{obs}
+
+To be able to fully characterise inverse functions, we need to recall two more facts:
+
+\begin{fact}
+	\begin{enumerate}[label=(\arabic*)]
+		\item Recall that a \textit{single variable function} $f: \R \to \R$ is \textbf{differentiable at $x=a$} if
+		$$\lim\limits_{h \to 0} \frac{f(a+h) - f(a)}{h} $$
+		exists; if the limit exists, we denote it $f'(a)$.
+		
+		\item In higher dimensions, we can write the statement above equivalently as
+		$$ f(a+h) - f(a) = Ah + \abs{h} f(a,h) $$
+		where $A$ is the \textit{derivative} at $x=a$, and $f(a,h) \to 0 $ as $ h\to 0$.
+		
+		\item Even more generally: let $f : G \to \R^{q}$, where $G \subset \R^{p}$ is \textit{open}. The choice of norm on any finite dimensional Euclidean space does not matter, since they all induce the same topology. In this case, we say $f$ is differentiable at $a \in G$ if, $\exists A \in \linearop (\R^p,\R^q) = \mathcal{M}_{q \times p} \suchthat $
+		$$ f(a+h) - f(a) = Ah + \norm{h} f(a,h) $$ 
+		where $f(a,h) \to 0 $ as $h\to 0$. A matter of notation: $\DD f(a) = f'(a) = A$.
+	\end{enumerate}
+\end{fact}
+
+\begin{proposition}
+	$f$ is differentiable at $a \in G \iff \displaystyle \lim\limits_{h \to 0} \frac{\norm{ f(a+h) - f(a) - Ah } }{\norm{h} }=0$.
+\end{proposition}
+
+\begin{proposition}
+	$G \subset \R^p$ is open. Let $x \in \R^p$. $f: G \to \R^q$ is differentiable. Then the following are equivalent:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $f = \left( \begin{array}{c} f_1 \\ f_2 \\ \vdots \\ f_q \end{array} \right) $ is continuous.
+		\item the partial derivatives exist at $x=a$.
+		\item $\DD f(x) = A = \displaystyle \left( \frac{\partial f_i}{\partial x_j} \right)_{i,j \in [1,p] |  i \neq j}$ is the Jacobian.
+	\end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+	\label{thmfdiffifcontinuousexists}
+	$f:G \to \R^q$, where $G \subset \R^p$ is open, is differentiable \textit{if} all partial derivatives exist \textit{and} are continuous.
+\end{theorem}
+
+\begin{example}
+	An elementary counterexample to \thmref{thmfdiffifcontinuousexists} is, in $D \subset \R^2$, $f(x,y) = xy$, where $xy \neq 0$. Its partial derivatives exist everywhere, but are not continuous. 
+\end{example}
+
+\begin{theorem}
+	$G \subset \R^n $ is open and connected. $f : G \to \R^m$ is differentiable, and $\DD f(x) = 0$. Then, $\forall x \in G$, $f(x)$ is constant in $G$.
+\end{theorem}
+
+\begin{proof}
+	
+\end{proof}
+
+\begin{definition}
+	$f$ is \textbf{continuously differentiable} if $f$ is differentiable and $f'$ is continuous. We denote such $f \in \contf^1$.
+\end{definition}
+
+\begin{definition}
+	\textbf{Convex set} $G$ is, if $\forall x,y \in G$, $(tx +(1-t)y) \subset G$.
+\end{definition}
+
+\begin{proposition}
+	\label{propwritingconvexsetfunctions}
+	Suppose $f \in \contf^1$ on an open, convex set. Then, $\forall x,y \in G$,
+	\begin{align*}
+	f(y + t(x-y) ) &= f(y) + \int_{0}^{t} \DD f(y+s(x-y)) \cdot (x-y) \dif s 
+	\end{align*}
+	$\forall s < t$.
+\end{proposition}
+
+\begin{proof}
+	Let $F(t) = f(y + t(x-y) ) - f(y) - \int_{0}^{t} \DD f(y+s(x-y)) \cdot (x-y) \dif s $. Such $F$ is differentiable because every component of the sum is differentiable; hence,
+	\begin{align*}
+	\frac{\dif F}{\dif t} &= \DD f(y + t(x-y) ) (x-y) - \DD f(y+t(x-y)) (x-y) \\
+	&=0
+	\end{align*}
+	as desired. 
+\end{proof}
+
+\begin{definition}
+	Suppose $Y$ is a linear space (with \textit{addition} and \textit{scalar multiplication} as its operations). A \textbf{norm} on $Y$ is a map
+	$$ \norm{\cdot} : Y \to \R_{+}  $$
+	such that the following conditions hold:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $\norm{x} = 0 \iff x = 0$;
+		\item $\norm{\lambda x} = \abs{\lambda} \norm{x} $, where $\lambda \in \R$ and $x \in Y$;
+		\item $\norm{x+y} \leq \norm{x} + \norm{y} $, $\forall x,y \in Y$.
+	\end{enumerate}
+\end{definition}
+
+Now we can finally move onto what we care about.
+
+\subsection{Inverse Function Theorem}
+
+\begin{fact}
+	Two more elementary statements: given $A : \R^n \to \R^n$,
+	\begin{enumerate}[label=(\arabic*)]
+		\item The following are equivalent:
+		\begin{enumerate}
+			\item $A$ is a bijection;
+			\item $\det A \neq 0$;
+			\item $Ax = 0 \iff x=0$.
+		\end{enumerate}
+		
+		\item If $A$ is a bijection, then $\norm{A} \norm{A^{-1}} \geq 1$.
+	\end{enumerate}
+\end{fact}
+
+\begin{theorem}[contraction mapping theorem]
+	\label{thmcontractionmapping}
+	Let $(X,d)$ be a complete metric space. Let $f $ be a contraction, ie. $f: X \to X$, where $\exists \varphi \in (0,1) \suchthat d(f(x),f(y)) < \varphi d(x,y)$, $\forall x,y \in X$. Then, $\exists! z \in X \suchthat f(z) = z$.
+\end{theorem}
+
+\begin{proof}
+	We prove this in three parts.
+	\begin{enumerate}[label=(\arabic*)]
+		\item  We want to prove that if $x_{n+1} = f(x_n)$ is recursively defined, then $\{x_n\}$ is a Cauchy sequence in the complete metric space $M$. We first note that by definition, the following is true:
+		\begin{align*}
+		d( x_{n+1}, x_n ) &\leq  \varphi d( x_n , x_{n-1} ) \leq  \varphi^2 d( x_{n-1} , x_{n-2} ) \leq \dots \\
+		& \leq \varphi^n d(x_1,x_0)
+		\end{align*}
+		so the distance between any two points is shrinking at a geometric rate $\varphi$. This helps us in constructing a Cauchy sequence $\{x_n\}$: namely, pick $m > n$, and we can then write
+		\begin{align*}
+		d( x_{n}, x_m ) &\leq   d( x_n , x_{n+1} ) +   d( x_{n+1} , x_{n+2} ) + \dots + d( x_{m-1} , x_{m} ) \\
+		&\leq \varphi^n d(x_1,x_0) + \varphi^{n+1} d(x_1,x_0) + \dots + \varphi^{m-1} d(x_1,x_0) \\
+		&= (\varphi^n + \varphi^{n+1} + \dots + \varphi^{m-1}) d(x_1,x_0) \\
+		&\leq (\varphi^n + \varphi^{n+1} + \varphi^{n+2} + \dots) d(x_1,x_0) \\	
+		&= \frac{\varphi^n }{1 - \varphi }d(x_1,x_0) 
+		\end{align*}
+		then, to show such sequence $\{x_n\}$ is Cauchy, we fix some $\varepsilon>0$. Then, $\exists N \in \N \suchthat$
+		$$ \frac{\varphi^N }{1 - \varphi} d(x_1,x_0) < \varepsilon $$
+		for any $m > n > N$, it must be the case that
+		$$ d(x_n,x_m) \leq \frac{\varphi^n }{1 - \varphi }d(x_1,x_0)  \leq  \frac{\varphi^N }{1 - \varphi} d(x_1,x_0) < \varepsilon $$
+		since $\varphi \in (0,1)$. Hence, this proves that $\{x_n\}$ is a Cauchy sequence.
+		
+		\item 
+		To prove that there exists a fixed point, $f(x) = x$, we need to know that such $f$ is continuous. We prove something even stronger: that $f$ (contractions) is \textit{uniformly continuous}. We note that
+		\begin{itemize}[noitemsep]
+			\item This is clear when $\varphi = 0$, since $f$ would just be a constant function
+			\item $\forall \varphi > 0$, define $\delta = \frac{\varepsilon}{\varphi}$; then, this implies
+			$$d(x,y) < \delta  \implies d(f(x),f(y)) \leq \varphi d(x,y) < \varphi \frac{\varepsilon}{\varphi} = \varepsilon$$
+		\end{itemize}
+		so $f$ is uniformly continuous$\implies f$ is continuous. Since $f$ is continuous, we have that
+		$$ (x_n) \to a \implies f(x_n) \to f(x) $$
+		where $x = \lim\limits_{n \to \infty} x_n$ as defined in the question. But, at the same time, since $f(x_{n}) = x_{n+1}$,
+		$$ n \to \infty \implies f(x_n ) \to x $$
+		so both $x$ and $f(x)$ are limits of $f(x_n)$. By uniqueness of limit, $f(x)=x$.
+		
+		\item 
+		Proceed to prove \textit{uniqueness} by contradiction. Suppose $f$ admits two fixed points, $x$ and $x'$. Then,
+		\begin{align*}
+		d(x,x') &= d(f(x),f(x')) \leq \varphi d(x ,x')
+		\end{align*}
+		then, if $x \neq x'$, then $d(x,x') > 0$, so divide both sides to get
+		$$ \frac{d(f(x),f(x'))}{d(x ,x')} \leq \varphi \implies 1 \leq \varphi $$
+		which contradicts our assumption that $\varphi \in [0,1)$. Hence, such fixed point is unique.
+	\end{enumerate}
+	This completes the entire proof.
+\end{proof}
+
+\begin{theorem}[inverse function theorem]
+	\label{thminversefunction}
+	Suppose $f \in \contf^1$. $f : E \to \R^n $, $E \subset \R^n$ is open, such that $f'(a)$ is invertible for some $a \in E$, and $b = f(a)$. Then,
+	\begin{enumerate}[label=(\arabic*)]
+		\item $\exists $ open sets $U, V \subset \R^n \suchthat a \in U, b \in V $, and $f$ is one-to-one (bijective) on $U$, while $f(U) =V$;
+		\item if $g$ is the inverse of $f$, defined in $V$ by
+		$$ g(f(x)) = x, \quad x \in U $$ 
+		then $g \in \contf^1$.
+	\end{enumerate}
+\end{theorem}
+
+The proof is labyrinthine and not exactly riveting; we do a full exposition below. Everything will be numbered carefully.
+
+\begin{proof}
+	For each part:
+	\begin{enumerate}[label=(\arabic*)]
+		\item Let $f'(a) \coloneqq A$. Choose $\lambda \in \R \suchthat $
+		\begin{align}
+		\label{invfunc1}
+		2 \lambda \norm{A^{-1}} = 1
+		\end{align}
+		Since $f'(x)$ is continuous at $x=a$, $\exists U=B(a,\varepsilon) \subset E \suchthat $
+		\begin{align}
+		\label{invfunc2}
+		\norm{f'(x)- A} < \lambda, \quad x \in U 
+		\end{align}
+		Now, we want to associate each $y \in \R^n$ to a function $\varphi_y$, defined
+		\begin{align}
+		\label{invfunc3}		
+		\varphi_y (x) = x + A^{-1} (y-f(x)), \quad x \in E
+		\end{align}
+		Note two things:
+		\begin{itemize}
+			\item We define $\varphi_y (x)$ on the entire open subset $E$.
+			\item $f(x) =y \iff x$ is a \textit{fixed point} of $\varphi_y$, ie. $\varphi_y(x)= x$. The problem boils down to proving $\varphi_y $ is a contraction (from some set to itself).
+		\end{itemize}
+		
+		In that spirit, we need to construct everything consistently and carefully. Since $\varphi'_y (x) = I - A^{-1} f'(x) = A^{-1} (A - f'(x))$, we then have, from using \eqref{invfunc1} and \eqref{invfunc2},
+		\begin{align}
+		\label{invfunc4}
+		\norm{\varphi'_y(x)} < \frac{1}{2}, \quad x \in U
+		\end{align}
+		
+		Moreover, notice $U$ is a \textit{convex set}. Note that, if $x,x' \in U$, and $t \in[0,1]$, then we necessarily have
+		\begin{align*}
+		\norm{ (tx + (1-t)x') - a } &= \norm{tx + (1-t)x' - (ta + (1-t)a ) }  \\
+		&\leq \norm{t(x-a)} + \norm{(1-t)(x'-a)}  \\
+		&\leq t \varepsilon + (1-t) \varepsilon = \varepsilon 
+		\end{align*}
+		Then, by \propref{propwritingconvexsetfunctions}, we can get, with $t=1$ and any two points $x,y \in U$,
+		\begin{align*}
+		\varphi(x )&= \varphi(y) + \int_{0}^{1} \varphi' (y+s(x-y) ) \cdot (x-y) \dif s \\
+		\implies \varphi(x )- \varphi(y)& = \int_{0}^{1} \varphi' (y+s(x-y) ) \cdot (x-y) \dif s
+		\end{align*}
+		and by \eqref{invfunc4}, we have the bound
+		\begin{align}
+		\label{invfunc5}
+		\norm{\varphi(x )- \varphi(y)} &\leq \int_{0}^{1} \frac{1}{2} \cdot \norm{x-y} \dif s = \frac{1}{2} \norm{x-y}
+		\end{align}
+		This is a contraction (with $c=\frac{1}{2}$, $c$ being the constant on the contraction $d(\varphi(x), \varphi(y) ) < c d(x,y)$). Hence, there is at most one fixed point in $U$. By the second bullet point above, we see that $f(x)=y$ is guaranteed. We now know that $f$ is one-to-one in $U$.
+		
+		Now, let $V=f(U)$. Fix some $y_0 \in V \suchthat y_0 = f(x_0)$, for some $x_0\in U$. Since $U$ is open, let $B = B(x_0,r)$ with radius $r$ such that $\overline{B} \subset U$. Then, we need to show that $\norm{y - y_0} < \lambda r \implies  y \in V $; ie. we want to show $V$ is open. We fix $y \suchthat \norm{y - y_0} < \lambda r$. Notice, by definition,
+		\begin{align*}
+		\norm{\varphi(x_0) - x_0} = \norm{A^{-1} (y-y_0)} &\leq \norm{A^{-1}} \norm{y-y_0} \\
+		&\leq  \norm{A^{-1}} \lambda r = \frac{r}{2}
+		\end{align*}
+		where we used \eqref{invfunc1}. If $x \in \overline{B} \subset U$, it follows from \eqref{invfunc5} that
+		\begin{align*}
+		\norm{\varphi(x) - x_0} &\leq \norm{\varphi(x) - \varphi (x_0)} + \norm{\varphi (x_0) - x_0 } \\
+		&\leq  \frac{1}{2} \underbrace{\norm{x - x_0}}_{<r} + \frac{r}{2} < r
+		\end{align*}
+		it follows then that $\varphi (x) \in \overline{B}$. Noting that $\varphi$ is a contraction from $\overline{B} \to \overline{B}$, there exists a unique fixed point in $\overline{B}$. For such $x \in U$, we have $f(x) \in f(\overline{B}) \subset f(U) = V$.
+		
+		
+		\item Equally uneasy it is to prove the second part of the theorem. First, we pick $y \in V$, and $y + k \in V$. Then, $\exists x, x+h \in U \suchthat y=f(x)$ and $ y+k = f(x+h)$. Note that
+		\begin{align*}
+		\varphi_y (x+h) - \varphi_y (x) &= h + A^{-1} (f(x) - f(x+h)) \\
+		&= h - A^{-1} k
+		\end{align*}
+		as with \eqref{invfunc5}, we note that $\norm{h - A^{-1} k} \leq \norm{\varphi_y (x+h) - \varphi_y (x) } \leq \frac{1}{2} \norm{h}$. Then, we have the following inequality:
+		\begin{align}
+		\norm{A^{-1} k} \geq \norm{h} - \norm{h - A^{-1} k} &\geq \frac{\norm{h}}{2} \\
+		\label{invfunc6}
+		\implies \norm{h} &\leq 2 \norm{A^{-1}} \norm{k} \leq \frac{1}{\lambda} \norm{k}
+		\end{align}
+		Now, we \uline{claim} that $f'(x)$ is invertible $\forall x \in U$! Suppose, by way of contradiction, that $f'$ is not invertible. Then, $\exists \gamma \in \R^n \suchthat f'(x) \gamma = 0$, where $\gamma \neq 0$. But, from \eqref{invfunc1} and \eqref{invfunc2}, we have that
+		$$ \norm{A^{-1}} \norm{f'(x)\gamma - A \gamma } < \frac{1}{2\lambda} \lambda \norm{\gamma} = \frac{\norm{\gamma} }{2}   $$
+		however, using our assumption that $ f'(x) \gamma = 0$, we can say that $\norm{A^{-1}} \norm{f'(x)\gamma - A \gamma }  = \norm{A^{-1}} \norm{ A \gamma } \geq \norm{\gamma}$, since $\gamma = A^{-1} A \gamma$, by definition. But, combining both conclusions above yields that $\norm{A^{-1}} \norm{f'(x)\gamma - A \gamma } < \frac{\norm{\gamma}}{2}$ \textit{and} $\norm{A^{-1}} \norm{f'(x)\gamma - A \gamma } > \gamma$, a contradiction.
+		
+		Finally, denote the derivative of $g$ as $T = T(x)$. Since
+		\begin{align*}
+		g(y+k) - g(y) - Tk &= x+h - x - Tk \\
+		&= h - Tk \\
+		&= -T (f(x+h) - f(x) - f'(x) h )
+		\end{align*}
+		hence, by \eqref{invfunc6},
+		$$ \frac{\norm{g(y+k) - g(y) - Tk} }{\norm{k} } \leq \frac{\norm{T} }{\lambda} \frac{f(x+h) - f(x) - f'(x) h}{\norm{h} } $$
+		and note that $k \to 0$ as $h \to 0$, again, by \eqref{invfunc6}. The same happens to RHS: it goes to zero, and LHS converges to zero as well. Hence, $g'(y)$ exists and it is exactly $T(x) = (f'(x))^{-1}$, where $x =g(y)$. Combining these yield
+		\begin{align}
+		\label{invfunc7}
+		g'(y) = (f'(g(y)))^{-1}
+		\end{align}
+		as desired. Note that $g(y)$ is differentiable, hence is continuous; the continuity of $g'(y)$ follows from \eqref{invfunc7}, in particular, because $f'(x)$ is continuous. Hence, $y \in \contf^1 $ on $V = f(U)$. 
+	\end{enumerate}
+	This completes the entire proof.
+\end{proof}
+
+An immediate consequence of \thmref{thminversefunction} is the following.
+
+\begin{theorem}
+	Let $f : E \mapsto \R^n$, $E \subset \R^n$, $f \in \contf^1$, $(f')^{-1} (x)$ exists $\forall x \in E$. Then, $f(W) \subset \R^n$ is an open set, for all $W \subset E$ that is open. 
+\end{theorem}
+
+\begin{remark}
+	$f$ is said to be an \textbf{open mapping} of $E \to \R^n$.
+\end{remark}
+
+
+\subsection{Implicit Function Theorem}
+
+Another related consequence of inverse function theorem is the \textit{implicit function theorem}, which states that, if $f \in \contf^1$ in the plane, the $f(x,y) = 0$ can be solved for $y=g(x)$ in a neighbourhood of any point $(a,b)$, where $f(a,b) = 0$, and $\frac{\partial f}{\partial y} \neq 0$. \textit{Mutatis mutandis}, we can solve $x = h(y)$.
+
+We employ the following notations: let $x \coloneqq (x_1,x_2,\dots,x_n) \in \R^n$, and $y \coloneqq (y_1,y_2,\dots,y_m) \in \R^m$. Then, it is the case that $(x,y) = (x_1,\dots,x_n,y_1,\dots,y_m) \in \R^{n+m}$. Every \textit{linear operator} $A \in \linearop (\R^{n+m},\R^n) \suchthat A: \R^{n+m} \mapsto \R^n$. In particular, we can always write $A$ into two components: $A_x$ and $A_y$, defined
+$$ A_x h =A(h,0), \quad A_y k = A(0,k) $$
+for any $h \in \R^n$ and $k \in \R^m$. Hence, we can say $A_x \in \linearop (\R^n)$ and $A_y \in \linearop (\R^m)$, where $A(h,k)=A_x h+ A_y k$.
+
+A simple version of implicit function theorem is the following.
+
+\begin{theorem}
+	\label{thmimplicitfunctionlinear}
+	If $A \in \linearop (\R^{n+m},\R^n)$, and $A_x$ is invertible, then there corresponds, to every $k \in \R^m$, a unique $h \in \R^n \suchthat A(h,k) =0$. This $h$ can be computed from $k$ by the formula
+	$$ h = -(A_x)^{-1} A_y k $$
+\end{theorem}
+
+\begin{proof}
+	This is \textit{very} elementary. Just note that $A(h,k)=0 \iff A_x h + A_y = 0 \iff h = -(A_x)^{-1} A_y k $.
+\end{proof}
+
+The following is the textbook version of implicit function theorem: the $\contf^1 $ implicit function theorem.
+
+\begin{theorem}
+	\label{thmimplicitfunctionC1}
+	$f \in \contf^1$, where $f : E \mapsto \R^n$, $E \subset \R^{n+m} $ is open, and $f(a,b)=0$ for some $(a,b) \in E$. Let $A = f'(a,b)$ and assume $A_x $ is invertible. Then there are a few consequences:
+	\begin{enumerate}[label=(\arabic*)]
+		\item $\exists U \subset \R^{n+m}, W \subset \R^n$, both open sets, such that $(a,b) \in U$ and $b \in W$, where 
+		$W = f(U) \bigcap \left\{x=0\right\} = \left\{ y \in \R^n | (0,y) \in V = f(U) \right\}$.
+		\item To every $y \in W$ there corresponds a \textit{unique} $x \suchthat (x,y) \in U, f(x,y)=0$.
+		\item If $x = g(y)$ then $g \in \contf^1$, where $g: W \mapsto \R^n$, $g(b)=a$, $f(g(u),y) = 0$ (for $y \in W$), and $g'(b) = -(A_x)^{-1} A_y$. 
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	We prove these separately.
+	
+	\begin{enumerate}[label=(\arabic*)]
+		\item 	Rather than proving this from first principles, we want to employ \thmref{thminversefunction} in some way. Let
+		$$F(x,y) = (f(x,y),y) , \quad (x,y) \in E \subset \R^{n+m}$$
+		where $f \in \contf^1$ by assumption. Then, $F \in \contf^1$. Hence, for some $(a,b)$, we \uline{claim} $F'(a,b) $ is an invertible element of $\linearop (\R^{n+m})$! We prove this directly: by assumption, $f(a,b) =0$. Then, let $h \in \R^{n+m}$, $k \in \R^n$, we see
+		\begin{align*}
+		f(a+h,b+k) &= f(a,b) + A (h,k) + r(h,k) \\
+		&= A (h,k) + r(h,k)
+		\end{align*}
+		where $r(h,k) $ is the remainder from the definition of derivatives.
+		
+		Then it follows that
+		\begin{align*}
+		F(a+h,b+k) - F(a,b) &= (f(a+h,b+k), b+k) - (f(a,b), b) \\
+		&= ( A (h,k) + r(h,k), k ) \\
+		&=(A(h,k), k) + (r(h,k),0)
+		\end{align*}
+		hence $F' (a,b) \in \linearop (\R^{n+m})$, which is a map $F' : (h,k) \mapsto (A(h,k),k)$. If $F'(a,b) = (A(h,k),k) = 0$, it follows that $k=0$, and 
+		\begin{align*}
+		A(h,k) = A_x h+ A_y k = A_x h &= 0 \\
+		\iff h&=0 
+		\end{align*}
+		since, by assumption, $A_x$ is invertible. Hence, $F'$ is one-to-one and invertible.
+		
+		Then, apply inverse function theorem: $\exists U \subset E$, $V \subset \R^{n+m}$ with $(a,b) \in U$, $(0,b) = F(a,b) \in V \suchthat F:U \mapsto V $ is injective. Note that $b \in W$, with $W$ as defined above. Also, note that $W$ is open in $\R^m$ and $V $ is open in $\R^{n+m}$. We now prove the injective part: if $y \in W$, then, for some $(x,y) \in U$, we have $(0,y) = F(x,y)$. By definition,
+		$$F(x,y) = (f(x,y),y) = (0,y)$$
+		implying $f(x,y)=0$ for this $(x,y)$. Hence, suppose $F$ is not injective, ie. $\exists x, x' \in U \suchthat f(x,y)=f(x',y)=0$, but $F(x,y) \neq F(x',y)$. But, notice that 
+		\begin{align*}
+		F(x',y) &= (f(x',y) , y) = (0,y) \\
+		&= (f(x,y), y) = F(x,y)
+		\end{align*}
+		this means $x=x'$, which contradicts our assumption.
+		
+		
+		\item Define $g(y)$ for $y \in W$ so that $(g(y),y) \in U$ and $f(g(y),y) =0$ (ie. the level set of $0$). If $G : V \mapsto U$ that inverts $F$, then $G \in \contf^1$. By inverse function theorem, we say that
+		$$ F(g(y),y) = (f(g(y),y),y) = (0,y), \quad y \in W $$
+		yields
+		$$ (g(y),y) = G(0,y) $$
+		which implies $g(y) \in \contf^1$ (since $G \in \contf^1$).
+		
+		
+		\item Computing $g'(b)$: let $(g(y),y) = \eta (y)$. Then, 
+		$$ \eta'(y) k = (g'(y)k,k) $$
+		and we then have 
+		$$ f(\eta(y) ) = f(g(y),y) = 0 , \quad \forall y \in W$$
+		Chain rule then tells us
+		$$ f'(\eta(y)) \eta'(y) = 0 $$
+		when $y \in W$. In particular, if $y =b$, then $\eta (y) = (a,b) $ and
+		$$ f'(\eta (y) ) = f' (g(h),h) = f'(a,b) = A $$
+		hence
+		$$ A \eta (b) = 0 $$
+		
+		Finally, as $\eta'(b) k = (g'(b) k,k)$, we have
+		\begin{align*}
+		A_x g'(b)k + A_y k &= A(g'(b)k,k) \\
+		&= A \eta'(b) k =0
+		\end{align*}
+		for all $k \in \R^m$. Then,
+		\begin{align*}
+		A_x g'(b)k + A_y k & = 0 \\
+		\implies g'(b) &= -(A_x)^{-1} A_y k
+		\end{align*}
+		as desired.
+	\end{enumerate} 
+	
+	This completes the proof of implicit function theorem.
+\end{proof}
+
+
+
+
+
+\end{document}
